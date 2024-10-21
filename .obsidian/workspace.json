@@ -1,0 +1,169 @@
+{
+  "main": {
+    "id": "6c2104446edd5b99",
+    "type": "split",
+    "children": [
+      {
+        "id": "a0de2a4fdecc05ce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2871fec1dbd202b5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CHANGELOG.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CHANGELOG"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "35f6fd732c92e376",
+    "type": "split",
+    "children": [
+      {
+        "id": "85e3b2a89cc55900",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8dd66ac171badb28",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorateur de fichiers"
+            }
+          },
+          {
+            "id": "c4b06f7808b04838",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Rechercher"
+            }
+          },
+          {
+            "id": "640c7d4bb034a4e2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Signet"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "60404f1a6b03c535",
+    "type": "split",
+    "children": [
+      {
+        "id": "5209494ac154b133",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "963d64283c9c72b4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CHANGELOG.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Rétrolien pour CHANGELOG"
+            }
+          },
+          {
+            "id": "e565d54807a4d80f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "CHANGELOG.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Liens sortants de CHANGELOG"
+            }
+          },
+          {
+            "id": "e3db277547793ad6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Mots-clés"
+            }
+          },
+          {
+            "id": "886e9035cb473905",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CHANGELOG.md"
+              },
+              "icon": "lucide-list",
+              "title": "Plan de CHANGELOG"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Ouvrir le sélecteur rapide": false,
+      "graph:Ouvrir la vue graphique": false,
+      "canvas:Créer une nouvelle toile": false,
+      "daily-notes:Ouvrir la note quotidienne": false,
+      "templates:Insérer le modèle": false,
+      "command-palette:Ouvrir la palette de commandes": false
+    }
+  },
+  "active": "2871fec1dbd202b5",
+  "lastOpenFiles": [
+    "CHANGELOG.md"
+  ]
+}
