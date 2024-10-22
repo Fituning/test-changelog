@@ -25,7 +25,7 @@ else
   echo "[" > temp.json
 fi
 
-# Obtenir les commits entre les deux SHA du plus récent au plus ancien
+# Obtenir les commits entre les deux SHA du plus ancien au plus récent
 commits=$(git log --reverse $last_sha..$new_sha --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S")
 
 # Vérifier si des commits sont présents
@@ -37,11 +37,8 @@ fi
 # Supprimer la dernière ligne du fichier JSON temporaire pour éviter d'avoir la dernière virgule
 sed -i '$ d' temp.json
 
-# Ajouter un nouveau tableau JSON temporaire avec les nouveaux commits
-echo "," >> temp.json  # Ajoute une virgule pour séparer l'ancien contenu des nouveaux commits
-
-# Traiter chaque commit pour l'ajouter dans le fichier JSON
-first_commit=true
+# Ajouter les nouveaux commits
+new_commits_added=false
 echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
     # Ignorer les commits qui commencent par un "#"
     if [[ $commit_message == \#* ]]; then
@@ -83,13 +80,14 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
         description=$commit_message
     fi
 
-    # Concaténer la description et ajouter le commit au fichier JSON
-    if [ "$first_commit" = true ]; then
-        echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}" >> temp.json
-        first_commit=false
-    else
-        echo ",{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}" >> temp.json
+    # Ajouter les nouveaux commits en tenant compte de la virgule
+    if [ "$new_commits_added" = true ]; then
+        echo "," >> temp.json  # Ajoute une virgule pour séparer l'ancien contenu des nouveaux commits
     fi
+
+    # Ajouter le nouveau commit dans le fichier JSON
+    echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}" >> temp.json
+    new_commits_added=true
 done
 
 # Ajouter la fermeture du tableau JSON
@@ -100,7 +98,7 @@ mv temp.json "$JSON_FILE"
 
 echo "Le fichier JSON a été mis à jour avec succès."
 
-# Ajouter un en-tête pour le fichier CHANGELOG.md s'il n'existe pas
+# Créer un en-tête pour le fichier CHANGELOG.md s'il n'existe pas
 if [ ! -f "$CHANGELOG_FILE" ]; then
   echo "# Changelog" > $CHANGELOG_FILE
   echo "" >> $CHANGELOG_FILE
