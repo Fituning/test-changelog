@@ -4,24 +4,19 @@
 REPO_URL=$(git config --get remote.origin.url)
 REPO_URL=${REPO_URL/.git/}
 
-# Fichier changelog et JSON
-CHANGELOG_FILE="CHANGELOG.md"
+# Fichier JSON
 JSON_FILE="changelog.json"
 
-# Récupérer les derniers commits non poussés
-last_push=$(git rev-parse @{u})
-new_commits=$(git log $last_push..HEAD --pretty=format:"%H;%cd;%s" --date=iso-local)
-
-# Si le fichier JSON n'existe pas encore, créer une structure de base
-if [ ! -f "$JSON_FILE" ]; then
-  echo "[" > $JSON_FILE
-else
-  # Retirer la dernière virgule si le JSON existe pour append proprement
-  sed -i '$ s/,$//' $JSON_FILE
+# Nettoyer le fichier JSON s'il existe déjà
+if [ -f "$JSON_FILE" ]; then
+  rm "$JSON_FILE"
 fi
 
-# Ajouter les nouveaux commits au fichier JSON
-echo "$new_commits" | while IFS=";" read commit_hash commit_date commit_message; do
+# Créer une structure de base pour le fichier JSON
+echo "[" > $JSON_FILE
+
+# Obtenir tous les commits du dépôt du plus ancien au plus récent
+git log --pretty=format:"%H;%cd;%s" --date=iso-local --reverse | while IFS=";" read commit_hash commit_date commit_message; do
     # Ignorer les commits qui commencent par '#'
     if [[ $commit_message == \#* ]]; then
         continue
@@ -46,19 +41,12 @@ echo "$new_commits" | while IFS=";" read commit_hash commit_date commit_message;
         description=$commit_message
     fi
 
-    # Ajouter au JSON
+    # Ajouter chaque commit au JSON
     echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$description\"}," >> $JSON_FILE
 done
 
-# Fermer la structure JSON proprement
+# Retirer la dernière virgule et fermer le JSON proprement
+sed -i '$ s/,$//' $JSON_FILE
 echo "]" >> $JSON_FILE
 
-# Maintenant utiliser le JSON pour mettre à jour le fichier CHANGELOG.md
-echo "# Changelog" > $CHANGELOG_FILE
-echo "" >> $CHANGELOG_FILE
-echo "| Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |" >> $CHANGELOG_FILE
-echo "|-------------------|--------------------|--------------|---------------|---------------------|" >> $CHANGELOG_FILE
-
-# Lire le JSON et mettre à jour le fichier changelog
-jq -r '.[] | "| \(.date) | [\(.commit)]('$REPO_URL'/commit/\(.commit)) | \(.tag) | \(.scope) | \(.description) |"' $JSON_FILE >> $CHANGELOG_FILE
-
+echo "Le fichier JSON a été généré et nettoyé avec succès."
