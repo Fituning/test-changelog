@@ -2,6 +2,10 @@
 
 | Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |
 |-------------------|--------------------|--------------|---------------|---------------------|
+| 2024-10-22 14:25:46 | [2770d6bf085b077dee571e2fe6d6145d7bbfcc0f](https://github.com/Fituning/test-changelog/commit/2770d6bf085b077dee571e2fe6d6145d7bbfcc0f) | **Merge** | ** | Merge branch 'main' of https://github.com/Fituning/test-changelog  |
+| 2024-10-22 14:24:48 | [da0e2c88b331fb435019433efde3d2abaa7b6346](https://github.com/Fituning/test-changelog/commit/da0e2c88b331fb435019433efde3d2abaa7b6346) | **** | ** | Revert \ |
+| 2024-10-22 14:17:18 | [643ae7de2da10d62af2ad6e907d6e30d0c29a9de](https://github.com/Fituning/test-changelog/commit/643ae7de2da10d62af2ad6e907d6e30d0c29a9de) | **Fixed** | *.md* | virgule bug  |
+| 2024-10-22 14:13:03 | [7c5a9d18be526dfbf8570e516f2079729d05ed36](https://github.com/Fituning/test-changelog/commit/7c5a9d18be526dfbf8570e516f2079729d05ed36) | **fixed** | *changelog* |  RELOU  |
 | 2024-10-22 14:04:58 | [3874b6a328390444efa1a244b4fe8b38065a0f9a](https://github.com/Fituning/test-changelog/commit/3874b6a328390444efa1a244b4fe8b38065a0f9a) | **Fixed** | *changelog* |  fixed virgule bug  |
 | 2024-10-22 14:03:39 | [4fe36d534d755aeb3f3322af0482493a31000830](https://github.com/Fituning/test-changelog/commit/4fe36d534d755aeb3f3322af0482493a31000830) | **Fixed** | *changelog.json* | add commit manualy add last commit  |
 | 2024-10-22 12:46:39 | [3ef56aad7d125921d2a0c3572998cd7edf94bc3c](https://github.com/Fituning/test-changelog/commit/3ef56aad7d125921d2a0c3572998cd7edf94bc3c) | **Fixed** | *changelog* | virgule  |
