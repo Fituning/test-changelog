@@ -22,6 +22,8 @@ jobs:
 
       - name: Commit updated CHANGELOG.md
         run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           git add CHANGELOG.md
           git commit -m "Update CHANGELOG.md automatically"
               
