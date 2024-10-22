@@ -65,3 +65,5 @@
 {"commit": "d529967c6234f925027180ef81d5e862b186fd2c", "date": "2024-10-22 10:31:52", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "},
 {"commit": "acc4c0ee7e13d489665f009c3863f83ce2288f96", "date": "2024-10-22 10:40:47", "tag": "Changed", "scope": "changelog", "description": "Changed(changelog)\n\n- correction de l'affichage des commits\n- mise a jour du .JSON et du .MD\n- optimisation de l'algorithme\n- traitement des derniers commits uniquement\n- prise en compte des carractères spéciaux pour ne pas polluer le json\n- ajout d'un fichier de formatage global a lancer manuellement "}
 ]
+{"commit": "9232275eb42ba35c9dab8af3a42c132eaccc35f0", "date": "2024-10-22 11:17:00", "tag": "Fixed", "scope": "changelog", "description": "Fixed(changelog)\n\n- corection de bug de saut de ligne\n- prise en compte des derniers commits uniquement "}
+]
