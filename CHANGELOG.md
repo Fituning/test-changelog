@@ -73,3 +73,4 @@
 | 2024-10-21 10:02:45 | [e15088ccbaeaf31f23d022c01b04a45f66cb26aa](https://github.com/Fituning/test-changelog/commit/e15088ccbaeaf31f23d022c01b04a45f66cb26aa) | **** | ** | Initial commit9bf36f4d8e5abb58ae013c3c266d167786580ee5;2024-10-21 10:16:08;#feat index  |
 | 2024-10-22 14:52:18 | [021c6802c346e52f6f80e7525a62e521aa2151be](https://github.com/Fituning/test-changelog/commit/021c6802c346e52f6f80e7525a62e521aa2151be) | **Update** | ** | Update generate_changelog.sh |
 | 2024-10-22 14:54:30 | [ae6d99397d4ed4f084a0888a1295a4b3129418b5](https://github.com/Fituning/test-changelog/commit/ae6d99397d4ed4f084a0888a1295a4b3129418b5) | **Update** | ** | Update generate_changelog.sh |
+| 2024-10-22 14:55:37 | [d52c1914e5cda67974e73565eab67e9434762ace](https://github.com/Fituning/test-changelog/commit/d52c1914e5cda67974e73565eab67e9434762ace) | **Update** | ** | Update changelog.json |
