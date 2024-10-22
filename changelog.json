@@ -40,4 +40,8 @@
 {"commit": "1b3ba6a", "date": "2024-10-22", "message": "Update update_changelog.yml"},
 {"commit": "81bd66b", "date": "2024-10-22", "message": "Added(generate_changelog.sh)"},
 {"commit": "1ed1d9d", "date": "2024-10-22", "message": "Merge branch 'main' of https://github.com/Fituning/test-changelog"},
-{"commit": "542553d", "date": "2024-10-22", "message": "Update update_changelog.yml"}]
+{"commit": "542553d", "date": "2024-10-22", "message": "Update update_changelog.yml"},
+{"commit": "b8e5470", "date": "2024-10-22", "message": "#Update CHANGELOG.md and changelog.json automatically"},
+{"commit": "ec43a66", "date": "2024-10-22", "message": "Fixed(generate_changelog.sh)"},
+{"commit": "da4fa60", "date": "2024-10-22", "message": "Merge branch 'main' of https://github.com/Fituning/test-changelog"},
+{"commit": "f5e27bc", "date": "2024-10-22", "message": "# modif gitignore"}]
