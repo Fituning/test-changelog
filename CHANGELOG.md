@@ -71,3 +71,4 @@
 | 2024-10-21 11:24:33 | [ee05750f00c356c0464c34c1f2b903e753ed0bc0](https://github.com/Fituning/test-changelog/commit/ee05750f00c356c0464c34c1f2b903e753ed0bc0) | **** | ** | Revert \ |
 | 2024-10-21 11:07:17 | [4737f03387b0cb8ab840f7723e8bae0004375bac](https://github.com/Fituning/test-changelog/commit/4737f03387b0cb8ab840f7723e8bae0004375bac) | **feat** | *style* | ajout du fichier style.css [changelog]  |
 | 2024-10-21 10:02:45 | [e15088ccbaeaf31f23d022c01b04a45f66cb26aa](https://github.com/Fituning/test-changelog/commit/e15088ccbaeaf31f23d022c01b04a45f66cb26aa) | **** | ** | Initial commit9bf36f4d8e5abb58ae013c3c266d167786580ee5;2024-10-21 10:16:08;#feat index  |
+| 2024-10-22 14:52:18 | [021c6802c346e52f6f80e7525a62e521aa2151be](https://github.com/Fituning/test-changelog/commit/021c6802c346e52f6f80e7525a62e521aa2151be) | **Update** | ** | Update generate_changelog.sh |
