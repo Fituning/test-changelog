@@ -54,4 +54,6 @@
 {"commit": "68b6773", "date": "2024-10-22", "message": "# fix"},
 {"commit": "cac4460", "date": "2024-10-22", "message": "#Update CHANGELOG.md and changelog.json automatically"},
 {"commit": "27b7312", "date": "2024-10-22", "message": "#fix"},
-{"commit": "22b17b6", "date": "2024-10-22", "message": "Merge branch 'main' of https://github.com/Fituning/test-changelog"}]
+{"commit": "22b17b6", "date": "2024-10-22", "message": "Merge branch 'main' of https://github.com/Fituning/test-changelog"},
+{"commit": "80fe86e", "date": "2024-10-22", "message": "#Update CHANGELOG.md and changelog.json automatically"},
+{"commit": "41e0e57", "date": "2024-10-22", "message": "# fix"}]
