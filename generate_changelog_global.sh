@@ -23,7 +23,7 @@ git log main --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S" | tac
         continue
     fi
 
-    # Accumuler les lignes suivantes pour le corps du commit
+    # Accumuler les lignes suivantes pour le corps du commit (description)
     commit_body=""
     while read body_line; do
         # Si la ligne est vide, c'est la fin du commit
@@ -38,23 +38,18 @@ git log main --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S" | tac
     commit_message=$(echo "$commit_message" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
     commit_body=$(echo "$commit_body" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
 
-    # Extraire le tag et le fichier/composant uniquement si le format respecte Tag(scope)
-    if [[ $commit_message =~ ^([A-Za-z]+)\(([A-Za-z0-9._-]+)\)\:?\ ?(.*) ]]; then
+    # Extraire le tag et le fichier/composant avec le format "Tag Scope"
+    if [[ $commit_message =~ ^([A-Za-z]+)\ ([A-Za-z0-9._-]+)\ ?(.*) ]]; then
         tag="${BASH_REMATCH[1]}"
         file_component="${BASH_REMATCH[2]}"
         description="${BASH_REMATCH[3]}"
-
-        # Si ":" est dans la description, on retire la partie avant les deux-points
-        if [[ $description == *:* ]]; then
-            description=$(echo "$description" | cut -d':' -f2-)
-        fi
     elif [[ $commit_message =~ ^Merge.* ]]; then
         # Si c'est un commit de merge
         tag="Merge"
         file_component=""
         description=$commit_message
     else
-        # Si pas de format Tag(scope), utiliser toute la description comme elle est
+        # Si pas de format "Tag Scope", utiliser toute la description comme elle est
         tag=""
         file_component=""
         description=$commit_message
