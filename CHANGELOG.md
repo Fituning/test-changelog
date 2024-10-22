@@ -2,6 +2,7 @@
 
 | Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |
 |-------------------|--------------------|--------------|---------------|---------------------|
+| 2024-10-22 15:45:34 | [ea988f0fbecb2f53d41e4df92baca3d2a94c348c](https://github.com/Fituning/test-changelog/commit/ea988f0fbecb2f53d41e4df92baca3d2a94c348c) | **Update** | *generate_changelog.sh* |  test description |
 | 2024-10-22 15:42:09 | [1c9ae553dc329cb99ff8b26566824bafd5303163](https://github.com/Fituning/test-changelog/commit/1c9ae553dc329cb99ff8b26566824bafd5303163) | **Update generate_changelog.sh** | ** |  test of description  |
 | 2024-10-22 15:35:04 | [4fbc7d52e497ba21b074e5427f5da9e60e455c4b](https://github.com/Fituning/test-changelog/commit/4fbc7d52e497ba21b074e5427f5da9e60e455c4b) | **Change** | *generate_changelog.sh* |  |
 | 2024-10-22 15:12:48 | [907440e4365b2387ceb6b445b6062470166d9d13](https://github.com/Fituning/test-changelog/commit/907440e4365b2387ceb6b445b6062470166d9d13) | **** | ** | Update delete virgule |

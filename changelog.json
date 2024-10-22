@@ -79,4 +79,4 @@
 {"commit": "907440e4365b2387ceb6b445b6062470166d9d13", "date": "2024-10-22 15:12:48", "tag": "", "scope": "", "description": "Update delete virgule"},
 {"commit": "4fbc7d52e497ba21b074e5427f5da9e60e455c4b", "date": "2024-10-22 15:35:04", "tag": "Change", "scope": "generate_changelog.sh", "description": ""},
 {"commit": "1c9ae553dc329cb99ff8b26566824bafd5303163", "date": "2024-10-22 15:42:09", "tag": "Update generate_changelog.sh", "scope": "", "description": " test of description "},
-]
+{"commit": "ea988f0fbecb2f53d41e4df92baca3d2a94c348c", "date": "2024-10-22 15:45:34", "tag": "Update", "scope": "generate_changelog.sh", "description": " test description"},]
