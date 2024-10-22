@@ -51,7 +51,7 @@
 {"commit": "4fe4054108366ea0a1a03afc8f409ad35f8f391c", "date": "2024-10-22 11:31:45", "tag": "Fixed", "scope": "changelog", "description": "global fixed global changelog genération "},
 {"commit": "997bc0687109f66edd2db4352eff4dd0d101166f", "date": "2024-10-22 11:31:52", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "},
 {"commit": "ec4fea3974e21c9cdaf14e6467879ee08678a3d5", "date": "2024-10-22 12:17:24", "tag": "Added", "scope": "changelog", "description": "markdown writing in markdown file "},
-{"commit": "2cd7c7b652d5962ce8475fa2f444e69687611fbe", "date": "2024-10-22 12:26:46", "tag": "Fixed", "scope": "changelog", "description": " "}
-,
+{"commit": "2cd7c7b652d5962ce8475fa2f444e69687611fbe", "date": "2024-10-22 12:26:46", "tag": "Fixed", "scope": "changelog", "description": " "},
+{"commit": "6427406f21cf2d1f5b71c602bedcde6abdfb2323", "date": "2024-10-22 12:41:26", "tag": "Fixed", "scope": "changelog", "description": "ordre modification de l'ordre des commits "},
 {"commit": "52aab7e6791a530496225647590872148885244a", "date": "2024-10-22 12:43:17", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "}
 ]
