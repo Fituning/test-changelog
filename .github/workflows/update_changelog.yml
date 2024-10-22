@@ -24,10 +24,3 @@ jobs:
           git config --global user.name "Your Name"
           git add CHANGELOG.md
           git commit -m "Update CHANGELOG.md automatically"
-      
-      - name: Push changes
-        env:
-          TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-        run: |
-          git remote set-url origin https://x-access-token:${TOKEN}@github.com/Fituning/test-changelog.git
-          git push origin main
