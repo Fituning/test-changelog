@@ -100,15 +100,13 @@ mv temp.json "$JSON_FILE"
 
 echo "Le fichier JSON a été mis à jour avec succès."
 
-# Créer un en-tête pour le fichier CHANGELOG.md s'il n'existe pas
+# Ajouter un en-tête pour le fichier CHANGELOG.md s'il n'existe pas
 if [ ! -f "$CHANGELOG_FILE" ]; then
   echo "# Changelog" > $CHANGELOG_FILE
   echo "" >> $CHANGELOG_FILE
+  echo "| Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |" >> $CHANGELOG_FILE
+  echo "|-------------------|--------------------|--------------|---------------|---------------------|" >> $CHANGELOG_FILE
 fi
-
-# Ajouter un en-tête pour les derniers commits
-echo "## Derniers commits" >> $CHANGELOG_FILE
-echo "" >> $CHANGELOG_FILE
 
 # Boucler sur le fichier JSON pour extraire les informations et les formater dans CHANGELOG.md
 cat $JSON_FILE | grep -oP '{.*?}' | tac | while read -r commit; do
@@ -119,15 +117,7 @@ cat $JSON_FILE | grep -oP '{.*?}' | tac | while read -r commit; do
     commit_description=$(echo $commit | grep -oP '"description":\s*"\K[^"]+')
 
     # Ajouter chaque ligne correctement dans le fichier CHANGELOG.md
-    if [[ ! -z "$commit_tag" && ! -z "$commit_scope" ]]; then
-        echo "## $commit_tag($commit_scope) - $commit_date" >> $CHANGELOG_FILE
-    else
-        echo "## Commit $commit_hash - $commit_date" >> $CHANGELOG_FILE
-    fi
-
-    # Ajouter la description sans sauts de ligne
-    echo "$commit_description" >> $CHANGELOG_FILE
-    echo "" >> $CHANGELOG_FILE
+    echo "| $commit_date | [$commit_hash]($REPO_URL/commit/$commit_hash) | **$commit_tag** | *$commit_scope* | $commit_description |" >> $CHANGELOG_FILE
 done
 
-echo "Le fichier CHANGELOG.md a été mis à jour avec les derniers commits."
+echo "Le fichier CHANGELOG.md a été mis à jour avec succès."

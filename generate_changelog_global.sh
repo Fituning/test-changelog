@@ -16,8 +16,8 @@ fi
 # Créer une structure de base pour le fichier JSON
 echo "[" > $JSON_FILE
 
-# Obtenir tous les commits poussés sur la branche principale du plus ancien au plus récent
-git log main --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S" | while IFS=";" read commit_hash commit_date commit_message; do
+# Obtenir tous les commits poussés sur la branche principale du plus récent au plus ancien
+git log main --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S" | tac | while IFS=";" read commit_hash commit_date commit_message; do
     # Vérifier si le commit message commence par un #
     if [[ $commit_message == \#* ]]; then
         continue
@@ -27,7 +27,7 @@ git log main --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S" | whi
     commit_body=""
     while read body_line; do
         # Si la ligne est vide, c'est la fin du commit
-        if [ -z "$body_line" ]; then
+        if [ -z "$body_line" ];then
             break
         fi
         # Ajouter la ligne à la description du commit
@@ -84,26 +84,16 @@ echo "" >> $CHANGELOG_FILE
 echo "| Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |" >> $CHANGELOG_FILE
 echo "|-------------------|--------------------|--------------|---------------|---------------------|" >> $CHANGELOG_FILE
 
-# Lire le fichier JSON et ajouter les informations dans le changelog
-while IFS= read -r line; do
-    if [[ $line == *"commit"* ]]; then
-        commit_hash=$(echo $line | grep -oP '"commit":\s*"\K[^"]+')
-    fi
-    if [[ $line == *"date"* ]]; then
-        commit_date=$(echo $line | grep -oP '"date":\s*"\K[^"]+')
-    fi
-    if [[ $line == *"tag"* ]]; then
-        commit_tag=$(echo $line | grep -oP '"tag":\s*"\K[^"]+')
-    fi
-    if [[ $line == *"scope"* ]]; then
-        commit_scope=$(echo $line | grep -oP '"scope":\s*"\K[^"]+')
-    fi
-    if [[ $line == *"description"* ]]; then
-        commit_description=$(echo $line | grep -oP '"description":\s*"\K[^"]+')
+# Lire le fichier JSON et ajouter les informations dans le changelog du plus ancien au plus récent
+cat $JSON_FILE | grep -oP '{.*?}' | tac | while read -r line; do
+    commit_hash=$(echo $line | grep -oP '"commit":\s*"\K[^"]+')
+    commit_date=$(echo $line | grep -oP '"date":\s*"\K[^"]+')
+    commit_tag=$(echo $line | grep -oP '"tag":\s*"\K[^"]+')
+    commit_scope=$(echo $line | grep -oP '"scope":\s*"\K[^"]+')
+    commit_description=$(echo $line | grep -oP '"description":\s*"\K[^"]+')
 
-        # Ajouter chaque ligne correctement dans le fichier CHANGELOG.md
-        echo "| $commit_date | [$commit_hash]($REPO_URL/commit/$commit_hash) | **$commit_tag** | *$commit_scope* | $commit_description |" >> $CHANGELOG_FILE
-    fi
-done < $JSON_FILE
+    # Ajouter chaque ligne correctement dans le fichier CHANGELOG.md
+    echo "| $commit_date | [$commit_hash]($REPO_URL/commit/$commit_hash) | **$commit_tag** | *$commit_scope* | $commit_description |" >> $CHANGELOG_FILE
+done
 
 echo "Le fichier CHANGELOG.md a été mis à jour avec succès."

@@ -2,6 +2,7 @@
 
 | Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |
 |-------------------|--------------------|--------------|---------------|---------------------|
+| 2024-10-22 12:26:46 | [2cd7c7b652d5962ce8475fa2f444e69687611fbe](https://github.com/Fituning/test-changelog/commit/2cd7c7b652d5962ce8475fa2f444e69687611fbe) | **Fixed** | *changelog* |   |
 | 2024-10-22 12:17:24 | [ec4fea3974e21c9cdaf14e6467879ee08678a3d5](https://github.com/Fituning/test-changelog/commit/ec4fea3974e21c9cdaf14e6467879ee08678a3d5) | **Added** | *changelog* | markdown writing in markdown file  |
 | 2024-10-22 11:31:52 | [997bc0687109f66edd2db4352eff4dd0d101166f](https://github.com/Fituning/test-changelog/commit/997bc0687109f66edd2db4352eff4dd0d101166f) | **Merge** | ** | Merge branch 'main' of https://github.com/Fituning/test-changelog  |
 | 2024-10-22 11:31:45 | [4fe4054108366ea0a1a03afc8f409ad35f8f391c](https://github.com/Fituning/test-changelog/commit/4fe4054108366ea0a1a03afc8f409ad35f8f391c) | **Fixed** | *changelog* | global fixed global changelog genération  |
@@ -53,3 +54,4 @@
 | 2024-10-21 11:24:39 | [b8df536661c8c8d292d1fb433950c25b8d5b84fa](https://github.com/Fituning/test-changelog/commit/b8df536661c8c8d292d1fb433950c25b8d5b84fa) | **** | ** | Revert \ |
 | 2024-10-21 11:24:33 | [ee05750f00c356c0464c34c1f2b903e753ed0bc0](https://github.com/Fituning/test-changelog/commit/ee05750f00c356c0464c34c1f2b903e753ed0bc0) | **** | ** | Revert \ |
 | 2024-10-21 11:07:17 | [4737f03387b0cb8ab840f7723e8bae0004375bac](https://github.com/Fituning/test-changelog/commit/4737f03387b0cb8ab840f7723e8bae0004375bac) | **feat** | *style* | ajout du fichier style.css [changelog]  |
+| 2024-10-21 10:02:45 | [e15088ccbaeaf31f23d022c01b04a45f66cb26aa](https://github.com/Fituning/test-changelog/commit/e15088ccbaeaf31f23d022c01b04a45f66cb26aa) | **** | ** | Initial commit9bf36f4d8e5abb58ae013c3c266d167786580ee5;2024-10-21 10:16:08;#feat index  |
