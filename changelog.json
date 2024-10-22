@@ -1,120 +1,60 @@
 [
-{"commit": "e15088ccbaeaf31f23d022c01b04a45f66cb26aa", "date": "2024-10-21 10:02:45", "tag": "", "scope": "", "description": "Initial commit9bf36f4d8e5abb58ae013c3c266d167786580ee5;2024-10-21 10:16:08;#feat index "}
-,
-{"commit": "4737f03387b0cb8ab840f7723e8bae0004375bac", "date": "2024-10-21 11:07:17", "tag": "feat", "scope": "style", "description": "ajout du fichier style.css [changelog] "}
-,
-{"commit": "ee05750f00c356c0464c34c1f2b903e753ed0bc0", "date": "2024-10-21 11:24:33", "tag": "", "scope": "", "description": "Revert \"#fix(gitignore)\" This reverts commit a3bdd1601b271d1ce147a04e949e695a890be4f2. "}
-,
-{"commit": "b8df536661c8c8d292d1fb433950c25b8d5b84fa", "date": "2024-10-21 11:24:39", "tag": "", "scope": "", "description": "Revert \"feat(style): ajout du fichier style.css [changelog]\" This reverts commit 4737f03387b0cb8ab840f7723e8bae0004375bac. "}
-,
-{"commit": "5dbc10dce036e12c87e57193b24e575c342fe949", "date": "2024-10-21 11:24:45", "tag": "", "scope": "", "description": "Revert \"#update index\" This reverts commit b48252c2ee8ec3775c5eb171c143dfd04626baab. "}
-,
-{"commit": "5a76c2ac8035885394fc2f5330b83de19e13515e", "date": "2024-10-21 11:24:49", "tag": "", "scope": "", "description": "Revert \"#feat changelog\" This reverts commit 18d86a2bdea83456179f7582b56ce9ee634b1d42. "}
-,
-{"commit": "8d8a092dad5db3b12097cfa02442b5e004cbb310", "date": "2024-10-21 12:09:14", "tag": "feat", "scope": "changelog", "description": "add automatic changelog "}
-,
-{"commit": "0be457e1fd7ac69e7d091987c5d499d4b43a29d6", "date": "2024-10-21 12:17:18", "tag": "feat", "scope": "changelog", "description": "add autochangelog "}
-,
-{"commit": "5f88daf3f8c17ae54e5e8917733874eb0271d0eb", "date": "2024-10-21 13:51:23", "tag": "", "scope": "", "description": "Revert \"feat(changelog): add automatic changelog\" This reverts commit 8d8a092dad5db3b12097cfa02442b5e004cbb310. "}
-,
-{"commit": "2a2b2e423c38253e1887bff1ec6d9395b924e37c", "date": "2024-10-21 13:51:29", "tag": "", "scope": "", "description": "Revert \"feat(changelog): add autochangelog\" This reverts commit 0be457e1fd7ac69e7d091987c5d499d4b43a29d6. "}
-,
-{"commit": "b20b0c96fc0fd12cf62004c62b2d0ab7cd99e8a8", "date": "2024-10-21 16:32:13", "tag": "Added", "scope": "changelog", "description": " Added automatic Changelog prsonalized "}
-,
-{"commit": "dd73c7432a30345403936ff33c3ec8e4f744abf9", "date": "2024-10-21 16:33:43", "tag": "Added", "scope": "index.html", "description": " added new section "}
-,
-{"commit": "25b8bb447fc0e07bf979664e3708b6cba276dd28", "date": "2024-10-21 16:34:46", "tag": "", "scope": "", "description": "Mise à jour automatique du changelog "}
-,
-{"commit": "a5333b8afcf11d623c2335482464c2ae0c0cea8f", "date": "2024-10-21 16:35:18", "tag": "", "scope": "", "description": "Mise à jour automatique du changelog "}
-,
-{"commit": "3ef0a9cd8c2678a9be03b7fde8c2bf0ba2be7b40", "date": "2024-10-21 16:38:46", "tag": "Fix", "scope": "gitignore", "description": "add .obsidian folder "}
-,
-{"commit": "82374696dc5616f15757349829b2b9568fc9ff6f", "date": "2024-10-21 16:42:07", "tag": "Removed", "scope": "index.html", "description": "remove section "}
-,
-{"commit": "708ae0e33b8610140eb790fec5da0147285ef005", "date": "2024-10-21 17:07:48", "tag": "Adde", "scope": "test", "description": "ca me gave ptn "}
-,
-{"commit": "e1c5c209281a10a7f4205f62e6bc2dfc8c0213dd", "date": "2024-10-21 17:09:05", "tag": "", "scope": "", "description": "Mise à jour automatique du changelog "}
-,
-{"commit": "4c059249d1ab703c5cce0e0eca1e68313e88e8c3", "date": "2024-10-22 08:32:01", "tag": "Removed", "scope": "index.html", "description": "delete last section "}
-,
-{"commit": "7baaab3be097f0fb6c1e04a6200f27ffc3b10560", "date": "2024-10-22 08:49:37", "tag": "Added", "scope": "actions", "description": "New action test "}
-,
-{"commit": "50e781be22fb99470385ed8177157bab21be128e", "date": "2024-10-22 08:58:53", "tag": "Fixed", "scope": "actions", "description": "Add token "}
-,
-{"commit": "e0dd4909853c3b433fee6a4dd20c98e51c2c5c3f", "date": "2024-10-22 09:02:13", "tag": "Fixed", "scope": "actions", "description": "fix repo name "}
-,
-{"commit": "055b183234f369a09226045ee555fa76ba606bad", "date": "2024-10-22 09:06:21", "tag": "Removed", "scope": "actions", "description": "remove push section "}
-,
-{"commit": "3b72d8a445cfe6d5a1cd900d6edc66767541a908", "date": "2024-10-22 09:07:47", "tag": "Added", "scope": "index", "description": "added new section "}
-,
-{"commit": "41b39fb35ce7c3d6294694284d1c19835d38c408", "date": "2024-10-22 09:11:45", "tag": "Added", "scope": "actions", "description": "actions push changelog modif "}
-,
-{"commit": "83c85ffa5df99f43cea0d015a39fb53acf61fc28", "date": "2024-10-22 07:11:55", "tag": "", "scope": "", "description": "Update CHANGELOG.md automatically "}
-,
-{"commit": "bedda75f2579db0a3d0ea64ec11102e52a5882a8", "date": "2024-10-22 09:13:58", "tag": "Removed", "scope": "index.html", "description": "remove last section "}
-,
-{"commit": "a75527a6897b809b11636be75d1b981a7d81e61c", "date": "2024-10-22 09:20:21", "tag": "Changed", "scope": "changelog.md", "description": "added commits "}
-,
-{"commit": "a6e00fc6d30426c0e466c2ffdb924ef40bc69b20", "date": "2024-10-22 07:20:33", "tag": "", "scope": "", "description": "Update CHANGELOG.md automatically "}
-,
-{"commit": "143a10ff4c8fb349fcd571bf5d5b44b40f2d17f7", "date": "2024-10-22 09:26:13", "tag": "", "scope": "", "description": "Update update_changelog.yml "}
-,
-{"commit": "a99c141b7c460aed1e33ac2e21fcc60947f051ea", "date": "2024-10-22 09:27:18", "tag": "", "scope": "", "description": "Update update_changelog.yml "}
-,
-{"commit": "87f4c31b330a31ccde9b469504fd517b4aa3aecf", "date": "2024-10-22 07:27:28", "tag": "", "scope": "", "description": "Update CHANGELOG.md automatically "}
-,
-{"commit": "1b3ba6ad4b81c9110a697a90c88817ce638b72d0", "date": "2024-10-22 09:39:48", "tag": "", "scope": "", "description": "Update update_changelog.yml "}
-,
-{"commit": "81bd66b2dbc5f3b95ea218f26ebb4e3459d7a7e5", "date": "2024-10-22 09:40:55", "tag": "Added", "scope": "generate_changelog.sh", "description": " Added new display for logs "}
-,
-{"commit": "1ed1d9d3e3d41eb727c36fce29455d0c64d678b3", "date": "2024-10-22 09:41:02", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "}
-,
-{"commit": "542553dd8349f6024cca45d057fa03eda8d04df2", "date": "2024-10-22 09:43:56", "tag": "", "scope": "", "description": "Update update_changelog.yml "}
-,
-{"commit": "ec43a6686907acf3fc1a87b777c165c1d2dfd423", "date": "2024-10-22 09:52:28", "tag": "Fixed", "scope": "generate_changelog.sh", "description": " fixed display of commits "}
-,
-{"commit": "da4fa60d4a59bfda9dd3b8ae233f14a49920cc69", "date": "2024-10-22 09:52:37", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "}
-,
-{"commit": "55bf4580e59c9d7830b99256c74e1a30fc600a47", "date": "2024-10-22 10:09:40", "tag": "", "scope": "", "description": "Update update_changelog.yml "}
-,
-{"commit": "22b17b6ac40498b0b5a2ed581cae7eee894d20dc", "date": "2024-10-22 10:14:14", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "}
-,
-{"commit": "107f4e62a3db2e842fb76a395913c26874a7d091", "date": "2024-10-22 10:25:59", "tag": "Changed", "scope": "generate_changelog.sh", "description": " - correction de l'affichage des commits - mise a jour du .JSON et du .MD - optimisation de l'algorithme - traitement des derniers commits uniquement "}
-,
-{"commit": "b2128d44e926dbcd97ce5da148aefc679998c2b1", "date": "2024-10-22 10:31:43", "tag": "Changed", "scope": "generate_changelog.sh", "description": " - correction de l'affichage des commits - mise a jour du .JSON et du .MD - optimisation de l'algorithme - traitement des derniers commits uniquement "}
-,
-{"commit": "d529967c6234f925027180ef81d5e862b186fd2c", "date": "2024-10-22 10:31:52", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "}
-,
-{"commit": "acc4c0ee7e13d489665f009c3863f83ce2288f96", "date": "2024-10-22 10:40:47", "tag": "Changed", "scope": "changelog", "description": " - correction de l'affichage des commits - mise a jour du .JSON et du .MD - optimisation de l'algorithme - traitement des derniers commits uniquement - prise en compte des carractères spéciaux pour ne pas polluer le json - ajout d'un fichier de formatage global a lancer manuellement "}
-,
-{"commit": "9994c31cf6323adfb9d460dfda7830a4e44037d9", "date": "2024-10-22 11:14:09", "tag": "", "scope": "", "description": "Update update_changelog.yml "}
-,
-{"commit": "9232275eb42ba35c9dab8af3a42c132eaccc35f0", "date": "2024-10-22 11:17:00", "tag": "Fixed", "scope": "changelog", "description": " - corection de bug de saut de ligne - prise en compte des derniers commits uniquement "}
-,
-{"commit": "203c1caadb507073df04726d5e29e62323c3c9a5", "date": "2024-10-22 11:22:01", "tag": "Fixed", "scope": "changelog", "description": " correction de bug génération du json "}
-,
-{"commit": "3274640dc98f090736d0c6e8d949f0388ef8a9bf", "date": "2024-10-22 11:25:47", "tag": "Fixed", "scope": "changelog", "description": " fix bug json "}
-,
-{"commit": "e542f425af3f77db7e40d2efa9c14d8facc859d2", "date": "2024-10-22 11:28:11", "tag": "Fixed", "scope": "changelog", "description": "fix fix title in description "}
-,
-{"commit": "4fe4054108366ea0a1a03afc8f409ad35f8f391c", "date": "2024-10-22 11:31:45", "tag": "Fixed", "scope": "changelog", "description": "global fixed global changelog genération "}
-,
-{"commit": "997bc0687109f66edd2db4352eff4dd0d101166f", "date": "2024-10-22 11:31:52", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "}
-,
-{"commit": "ec4fea3974e21c9cdaf14e6467879ee08678a3d5", "date": "2024-10-22 12:17:24", "tag": "Added", "scope": "changelog", "description": "markdown writing in markdown file "}
-,
-{"commit": "2cd7c7b652d5962ce8475fa2f444e69687611fbe", "date": "2024-10-22 12:26:46", "tag": "Fixed", "scope": "changelog", "description": " "}
-,
-{"commit": "6427406f21cf2d1f5b71c602bedcde6abdfb2323", "date": "2024-10-22 12:41:26", "tag": "Fixed", "scope": "changelog", "description": "ordre modification de l'ordre des commits "}
-,
-{"commit": "52aab7e6791a530496225647590872148885244a", "date": "2024-10-22 12:43:17", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "}
-,
-{"commit": "3ef56aad7d125921d2a0c3572998cd7edf94bc3c", "date": "2024-10-22 12:46:39", "tag": "Fixed", "scope": "changelog", "description": "virgule "}
-,
-{"commit": "4fe36d534d755aeb3f3322af0482493a31000830", "date": "2024-10-22 14:03:39", "tag": "Fixed", "scope": "changelog.json", "description": "add commit manualy add last commit "}
-,
+{"commit": "e15088ccbaeaf31f23d022c01b04a45f66cb26aa", "date": "2024-10-21 10:02:45", "tag": "", "scope": "", "description": "Initial commit9bf36f4d8e5abb58ae013c3c266d167786580ee5;2024-10-21 10:16:08;#feat index "},
+{"commit": "4737f03387b0cb8ab840f7723e8bae0004375bac", "date": "2024-10-21 11:07:17", "tag": "feat", "scope": "style", "description": "ajout du fichier style.css [changelog] "},
+{"commit": "ee05750f00c356c0464c34c1f2b903e753ed0bc0", "date": "2024-10-21 11:24:33", "tag": "", "scope": "", "description": "Revert \"#fix(gitignore)\" This reverts commit a3bdd1601b271d1ce147a04e949e695a890be4f2. "},
+{"commit": "b8df536661c8c8d292d1fb433950c25b8d5b84fa", "date": "2024-10-21 11:24:39", "tag": "", "scope": "", "description": "Revert \"feat(style): ajout du fichier style.css [changelog]\" This reverts commit 4737f03387b0cb8ab840f7723e8bae0004375bac. "},
+{"commit": "5dbc10dce036e12c87e57193b24e575c342fe949", "date": "2024-10-21 11:24:45", "tag": "", "scope": "", "description": "Revert \"#update index\" This reverts commit b48252c2ee8ec3775c5eb171c143dfd04626baab. "},
+{"commit": "5a76c2ac8035885394fc2f5330b83de19e13515e", "date": "2024-10-21 11:24:49", "tag": "", "scope": "", "description": "Revert \"#feat changelog\" This reverts commit 18d86a2bdea83456179f7582b56ce9ee634b1d42. "},
+{"commit": "8d8a092dad5db3b12097cfa02442b5e004cbb310", "date": "2024-10-21 12:09:14", "tag": "feat", "scope": "changelog", "description": "add automatic changelog "},
+{"commit": "0be457e1fd7ac69e7d091987c5d499d4b43a29d6", "date": "2024-10-21 12:17:18", "tag": "feat", "scope": "changelog", "description": "add autochangelog "},
+{"commit": "5f88daf3f8c17ae54e5e8917733874eb0271d0eb", "date": "2024-10-21 13:51:23", "tag": "", "scope": "", "description": "Revert \"feat(changelog): add automatic changelog\" This reverts commit 8d8a092dad5db3b12097cfa02442b5e004cbb310. "},
+{"commit": "2a2b2e423c38253e1887bff1ec6d9395b924e37c", "date": "2024-10-21 13:51:29", "tag": "", "scope": "", "description": "Revert \"feat(changelog): add autochangelog\" This reverts commit 0be457e1fd7ac69e7d091987c5d499d4b43a29d6. "},
+{"commit": "b20b0c96fc0fd12cf62004c62b2d0ab7cd99e8a8", "date": "2024-10-21 16:32:13", "tag": "Added", "scope": "changelog", "description": " Added automatic Changelog prsonalized "},
+{"commit": "dd73c7432a30345403936ff33c3ec8e4f744abf9", "date": "2024-10-21 16:33:43", "tag": "Added", "scope": "index.html", "description": " added new section "},
+{"commit": "25b8bb447fc0e07bf979664e3708b6cba276dd28", "date": "2024-10-21 16:34:46", "tag": "", "scope": "", "description": "Mise à jour automatique du changelog "},
+{"commit": "a5333b8afcf11d623c2335482464c2ae0c0cea8f", "date": "2024-10-21 16:35:18", "tag": "", "scope": "", "description": "Mise à jour automatique du changelog "},
+{"commit": "3ef0a9cd8c2678a9be03b7fde8c2bf0ba2be7b40", "date": "2024-10-21 16:38:46", "tag": "Fix", "scope": "gitignore", "description": "add .obsidian folder "},
+{"commit": "82374696dc5616f15757349829b2b9568fc9ff6f", "date": "2024-10-21 16:42:07", "tag": "Removed", "scope": "index.html", "description": "remove section "},
+{"commit": "708ae0e33b8610140eb790fec5da0147285ef005", "date": "2024-10-21 17:07:48", "tag": "Adde", "scope": "test", "description": "ca me gave ptn "},
+{"commit": "e1c5c209281a10a7f4205f62e6bc2dfc8c0213dd", "date": "2024-10-21 17:09:05", "tag": "", "scope": "", "description": "Mise à jour automatique du changelog "},
+{"commit": "4c059249d1ab703c5cce0e0eca1e68313e88e8c3", "date": "2024-10-22 08:32:01", "tag": "Removed", "scope": "index.html", "description": "delete last section "},
+{"commit": "7baaab3be097f0fb6c1e04a6200f27ffc3b10560", "date": "2024-10-22 08:49:37", "tag": "Added", "scope": "actions", "description": "New action test "},
+{"commit": "50e781be22fb99470385ed8177157bab21be128e", "date": "2024-10-22 08:58:53", "tag": "Fixed", "scope": "actions", "description": "Add token "},
+{"commit": "e0dd4909853c3b433fee6a4dd20c98e51c2c5c3f", "date": "2024-10-22 09:02:13", "tag": "Fixed", "scope": "actions", "description": "fix repo name "},
+{"commit": "055b183234f369a09226045ee555fa76ba606bad", "date": "2024-10-22 09:06:21", "tag": "Removed", "scope": "actions", "description": "remove push section "},
+{"commit": "3b72d8a445cfe6d5a1cd900d6edc66767541a908", "date": "2024-10-22 09:07:47", "tag": "Added", "scope": "index", "description": "added new section "},
+{"commit": "41b39fb35ce7c3d6294694284d1c19835d38c408", "date": "2024-10-22 09:11:45", "tag": "Added", "scope": "actions", "description": "actions push changelog modif "},
+{"commit": "83c85ffa5df99f43cea0d015a39fb53acf61fc28", "date": "2024-10-22 07:11:55", "tag": "", "scope": "", "description": "Update CHANGELOG.md automatically "},
+{"commit": "bedda75f2579db0a3d0ea64ec11102e52a5882a8", "date": "2024-10-22 09:13:58", "tag": "Removed", "scope": "index.html", "description": "remove last section "},
+{"commit": "a75527a6897b809b11636be75d1b981a7d81e61c", "date": "2024-10-22 09:20:21", "tag": "Changed", "scope": "changelog.md", "description": "added commits "},
+{"commit": "a6e00fc6d30426c0e466c2ffdb924ef40bc69b20", "date": "2024-10-22 07:20:33", "tag": "", "scope": "", "description": "Update CHANGELOG.md automatically "},
+{"commit": "143a10ff4c8fb349fcd571bf5d5b44b40f2d17f7", "date": "2024-10-22 09:26:13", "tag": "", "scope": "", "description": "Update update_changelog.yml "},
+{"commit": "a99c141b7c460aed1e33ac2e21fcc60947f051ea", "date": "2024-10-22 09:27:18", "tag": "", "scope": "", "description": "Update update_changelog.yml "},
+{"commit": "87f4c31b330a31ccde9b469504fd517b4aa3aecf", "date": "2024-10-22 07:27:28", "tag": "", "scope": "", "description": "Update CHANGELOG.md automatically "},
+{"commit": "1b3ba6ad4b81c9110a697a90c88817ce638b72d0", "date": "2024-10-22 09:39:48", "tag": "", "scope": "", "description": "Update update_changelog.yml "},
+{"commit": "81bd66b2dbc5f3b95ea218f26ebb4e3459d7a7e5", "date": "2024-10-22 09:40:55", "tag": "Added", "scope": "generate_changelog.sh", "description": " Added new display for logs "},
+{"commit": "1ed1d9d3e3d41eb727c36fce29455d0c64d678b3", "date": "2024-10-22 09:41:02", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "},
+{"commit": "542553dd8349f6024cca45d057fa03eda8d04df2", "date": "2024-10-22 09:43:56", "tag": "", "scope": "", "description": "Update update_changelog.yml "},
+{"commit": "ec43a6686907acf3fc1a87b777c165c1d2dfd423", "date": "2024-10-22 09:52:28", "tag": "Fixed", "scope": "generate_changelog.sh", "description": " fixed display of commits "},
+{"commit": "da4fa60d4a59bfda9dd3b8ae233f14a49920cc69", "date": "2024-10-22 09:52:37", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "},
+{"commit": "55bf4580e59c9d7830b99256c74e1a30fc600a47", "date": "2024-10-22 10:09:40", "tag": "", "scope": "", "description": "Update update_changelog.yml "},
+{"commit": "22b17b6ac40498b0b5a2ed581cae7eee894d20dc", "date": "2024-10-22 10:14:14", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "},
+{"commit": "107f4e62a3db2e842fb76a395913c26874a7d091", "date": "2024-10-22 10:25:59", "tag": "Changed", "scope": "generate_changelog.sh", "description": " - correction de l'affichage des commits - mise a jour du .JSON et du .MD - optimisation de l'algorithme - traitement des derniers commits uniquement "},
+{"commit": "b2128d44e926dbcd97ce5da148aefc679998c2b1", "date": "2024-10-22 10:31:43", "tag": "Changed", "scope": "generate_changelog.sh", "description": " - correction de l'affichage des commits - mise a jour du .JSON et du .MD - optimisation de l'algorithme - traitement des derniers commits uniquement "},
+{"commit": "d529967c6234f925027180ef81d5e862b186fd2c", "date": "2024-10-22 10:31:52", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "},
+{"commit": "acc4c0ee7e13d489665f009c3863f83ce2288f96", "date": "2024-10-22 10:40:47", "tag": "Changed", "scope": "changelog", "description": " - correction de l'affichage des commits - mise a jour du .JSON et du .MD - optimisation de l'algorithme - traitement des derniers commits uniquement - prise en compte des carractères spéciaux pour ne pas polluer le json - ajout d'un fichier de formatage global a lancer manuellement "},
+{"commit": "9994c31cf6323adfb9d460dfda7830a4e44037d9", "date": "2024-10-22 11:14:09", "tag": "", "scope": "", "description": "Update update_changelog.yml "},
+{"commit": "9232275eb42ba35c9dab8af3a42c132eaccc35f0", "date": "2024-10-22 11:17:00", "tag": "Fixed", "scope": "changelog", "description": " - corection de bug de saut de ligne - prise en compte des derniers commits uniquement "},
+{"commit": "203c1caadb507073df04726d5e29e62323c3c9a5", "date": "2024-10-22 11:22:01", "tag": "Fixed", "scope": "changelog", "description": " correction de bug génération du json "},
+{"commit": "3274640dc98f090736d0c6e8d949f0388ef8a9bf", "date": "2024-10-22 11:25:47", "tag": "Fixed", "scope": "changelog", "description": " fix bug json "},
+{"commit": "e542f425af3f77db7e40d2efa9c14d8facc859d2", "date": "2024-10-22 11:28:11", "tag": "Fixed", "scope": "changelog", "description": "fix fix title in description "},
+{"commit": "4fe4054108366ea0a1a03afc8f409ad35f8f391c", "date": "2024-10-22 11:31:45", "tag": "Fixed", "scope": "changelog", "description": "global fixed global changelog genération "},
+{"commit": "997bc0687109f66edd2db4352eff4dd0d101166f", "date": "2024-10-22 11:31:52", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "},
+{"commit": "ec4fea3974e21c9cdaf14e6467879ee08678a3d5", "date": "2024-10-22 12:17:24", "tag": "Added", "scope": "changelog", "description": "markdown writing in markdown file "},
+{"commit": "2cd7c7b652d5962ce8475fa2f444e69687611fbe", "date": "2024-10-22 12:26:46", "tag": "Fixed", "scope": "changelog", "description": " "},
+{"commit": "6427406f21cf2d1f5b71c602bedcde6abdfb2323", "date": "2024-10-22 12:41:26", "tag": "Fixed", "scope": "changelog", "description": "ordre modification de l'ordre des commits "},
+{"commit": "52aab7e6791a530496225647590872148885244a", "date": "2024-10-22 12:43:17", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "},
+{"commit": "3ef56aad7d125921d2a0c3572998cd7edf94bc3c", "date": "2024-10-22 12:46:39", "tag": "Fixed", "scope": "changelog", "description": "virgule "},
+{"commit": "4fe36d534d755aeb3f3322af0482493a31000830", "date": "2024-10-22 14:03:39", "tag": "Fixed", "scope": "changelog.json", "description": "add commit manualy add last commit "},
 {"commit": "3874b6a328390444efa1a244b4fe8b38065a0f9a", "date": "2024-10-22 14:04:58", "tag": "Fixed", "scope": "changelog", "description": " fixed virgule bug "}
-,
-{"commit": "7c5a9d18be526dfbf8570e516f2079729d05ed36", "date": "2024-10-22 14:13:03", "tag": "fixed", "scope": "changelog", "description": " RELOU "}
-,
 ]
