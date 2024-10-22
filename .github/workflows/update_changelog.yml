@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Récupérer tout l'historique des commits
 
       - name: Run generate_changelog.sh
         run: |
@@ -20,11 +22,9 @@ jobs:
 
       - name: Commit updated CHANGELOG.md
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
           git add CHANGELOG.md
           git commit -m "Update CHANGELOG.md automatically"
-          
+              
       - name: Push changes
         env:
           TOKEN: ${{ secrets.PERSONAL_TOKEN }}
