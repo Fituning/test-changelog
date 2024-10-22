@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # URL de ton dépôt GitHub (remplace par ton URL)
-REPO_URL="https://github.com/Fituning/test-changelog"
+REPO_URL="https://github.com/ton-utilisateur/ton-repository"
 
 # Fichier changelog
 CHANGELOG_FILE="CHANGELOG.md"
@@ -22,12 +22,12 @@ git log --pretty=format:"%H;%cd;%s" --date=iso | while IFS=";" read commit_hash 
     fi
 
     # Extraire le tag et le fichier/composant uniquement si le format respecte Tag(scope)
-    if [[ $commit_message =~ ^[A-Za-z]+\([A-Za-z0-9._-]+\)\: ]]; then
-        tag=$(echo $commit_message | cut -d'(' -f1)
-        file_component=$(echo $commit_message | cut -d'(' -f2 | cut -d')' -f1)
-        description=$(echo $commit_message | cut -d')' -f2-)
+    if [[ $commit_message =~ ^([A-Za-z]+)\(([A-Za-z0-9._-]+)\)\:?\ ?(.*) ]]; then
+        tag="${BASH_REMATCH[1]}"
+        file_component="${BASH_REMATCH[2]}"
+        description="${BASH_REMATCH[3]}"
 
-        # Si ":" est présent dans la description, extraire la partie avant et après le ":"
+        # Si ":" est présent dans la description, on réarrange
         if [[ $description == *:* ]]; then
             before_colon=$(echo $description | cut -d':' -f1)
             after_colon=$(echo $description | cut -d':' -f2-)
@@ -44,6 +44,7 @@ git log --pretty=format:"%H;%cd;%s" --date=iso | while IFS=";" read commit_hash 
     commit_link="[$commit_hash]($REPO_URL/commit/$commit_hash)"
     echo "| $commit_date | $commit_link | **$tag** | *$file_component* | $description |" >> $CHANGELOG_FILE
 done
+
 
 
 # Générer un fichier JSON
