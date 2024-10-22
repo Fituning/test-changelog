@@ -10,7 +10,7 @@ JSON_FILE="changelog.json"
 
 # Lire le JSON existant (si présent) et le copier temporairement
 if [ -f "$JSON_FILE" ]; then
-  jq '.' "$JSON_FILE" > temp.json
+  cp "$JSON_FILE" temp.json
 else
   echo "[" > temp.json
 fi
@@ -33,6 +33,11 @@ echo "," >> temp.json  # Ajoute une virgule pour séparer l'ancien contenu des n
 # Traiter chaque commit pour l'ajouter dans le fichier JSON
 first_commit=true
 echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
+    # Ignorer les commits qui commencent par un "#"
+    if [[ $commit_message == \#* ]]; then
+        continue
+    fi
+
     # Accumuler les lignes suivantes pour le corps du commit
     commit_body=""
     while read body_line; do
@@ -84,3 +89,35 @@ echo "]" >> temp.json
 mv temp.json "$JSON_FILE"
 
 echo "Le fichier JSON a été mis à jour avec succès."
+
+# Créer un en-tête pour le fichier CHANGELOG.md
+if [ ! -f "$CHANGELOG_FILE" ]; then
+  echo "# Changelog" > $CHANGELOG_FILE
+  echo "" >> $CHANGELOG_FILE
+fi
+
+# Ajouter un en-tête pour les derniers commits
+echo "## Derniers commits" >> $CHANGELOG_FILE
+echo "" >> $CHANGELOG_FILE
+
+# Boucler sur le fichier JSON pour extraire les informations et les formater dans CHANGELOG.md
+cat $JSON_FILE | grep -oP '{.*?}' | while read -r commit; do
+    commit_hash=$(echo $commit | grep -oP '"commit":\s*"\K[^"]+')
+    commit_date=$(echo $commit | grep -oP '"date":\s*"\K[^"]+')
+    commit_tag=$(echo $commit | grep -oP '"tag":\s*"\K[^"]+')
+    commit_scope=$(echo $commit | grep -oP '"scope":\s*"\K[^"]+')
+    commit_description=$(echo $commit | grep -oP '"description":\s*"\K[^"]+')
+
+    # Ajouter chaque ligne correctement dans le fichier CHANGELOG.md
+    if [[ ! -z "$commit_tag" && ! -z "$commit_scope" ]]; then
+        echo "## $commit_tag($commit_scope) - $commit_date" >> $CHANGELOG_FILE
+    else
+        echo "## Commit $commit_hash - $commit_date" >> $CHANGELOG_FILE
+    fi
+
+    # Ajouter la description sans sauts de ligne
+    echo "$commit_description" >> $CHANGELOG_FILE
+    echo "" >> $CHANGELOG_FILE
+done
+
+echo "Le fichier CHANGELOG.md a été mis à jour avec les derniers commits."
