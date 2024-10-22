@@ -15,19 +15,24 @@ jobs:
         with:
           fetch-depth: 0  # Récupérer tout l'historique des commits
 
+      - name: Get last pushed commits
+        id: commits
+        run: |
+          echo "LAST_SHA=$(git rev-parse HEAD^1)" >> $GITHUB_ENV
+          echo "NEW_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
+
       - name: Run generate_changelog.sh
         run: |
           chmod +x ./generate_changelog.sh
-          ./generate_changelog.sh
+          ./generate_changelog.sh ${{ env.LAST_SHA }} ${{ env.NEW_SHA }}  # Passer les deux SHA au script
 
       - name: Commit updated CHANGELOG.md and JSON
         run: |
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
           git add CHANGELOG.md changelog.json
-          git commit -m "#Update CHANGELOG.md and changelog.json automatically"
-      
-              
+          git commit -m "#Update CHANGELOG.md and changelog.json automatically" || echo "No changes to commit"
+
       - name: Push changes
         env:
           TOKEN: ${{ secrets.PERSONAL_TOKEN }}
