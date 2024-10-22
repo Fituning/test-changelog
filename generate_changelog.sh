@@ -67,8 +67,10 @@ echo "$new_commits" | while IFS=";" read commit_hash commit_date commit_message;
     echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}," >> $JSON_FILE
 done
 
-# Retirer la dernière virgule et fermer la structure JSON proprement
+# Retirer la dernière virgule ajoutée après le dernier élément
 sed -i '$ s/,$//' $JSON_FILE
+
+# Fermer le tableau JSON proprement
 echo "]" >> $JSON_FILE
 
-echo "Le fichier JSON a été généré et nettoyé avec succès."
+echo "Le fichier JSON a été mis à jour correctement."
