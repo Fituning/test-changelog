@@ -74,7 +74,7 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
 done
 
 # Ajouter la fermeture du tableau JSON
-echo "]" >> "$JSON_FILE"
+echo -n "]" >> "$JSON_FILE"
 
 echo "Le fichier JSON a été mis à jour avec succès."
 
