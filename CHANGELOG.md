@@ -2,6 +2,7 @@
 
 | Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |
 |-------------------|--------------------|--------------|---------------|---------------------|
+| 2024-10-22 10:09:40 +0200 | [55bf4580e59c9d7830b99256c74e1a30fc600a47](https://github.com/Fituning/test-changelog/commit/55bf4580e59c9d7830b99256c74e1a30fc600a47) | **** | ** | Update update_changelog.yml |
 | 2024-10-22 09:52:37 +0200 | [da4fa60d4a59bfda9dd3b8ae233f14a49920cc69](https://github.com/Fituning/test-changelog/commit/da4fa60d4a59bfda9dd3b8ae233f14a49920cc69) | **** | ** | Merge branch 'main' of https://github.com/Fituning/test-changelog |
 | 2024-10-22 09:52:28 +0200 | [ec43a6686907acf3fc1a87b777c165c1d2dfd423](https://github.com/Fituning/test-changelog/commit/ec43a6686907acf3fc1a87b777c165c1d2dfd423) | **** | ** | Fixed(generate_changelog.sh) |
 | 2024-10-22 09:43:56 +0200 | [542553dd8349f6024cca45d057fa03eda8d04df2](https://github.com/Fituning/test-changelog/commit/542553dd8349f6024cca45d057fa03eda8d04df2) | **** | ** | Update update_changelog.yml |
