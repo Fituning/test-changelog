@@ -55,4 +55,5 @@
 {"commit": "6427406f21cf2d1f5b71c602bedcde6abdfb2323", "date": "2024-10-22 12:41:26", "tag": "Fixed", "scope": "changelog", "description": "ordre modification de l'ordre des commits "},
 {"commit": "52aab7e6791a530496225647590872148885244a", "date": "2024-10-22 12:43:17", "tag": "Merge", "scope": "", "description": "Merge branch 'main' of https://github.com/Fituning/test-changelog "},
 {"commit": "3ef56aad7d125921d2a0c3572998cd7edf94bc3c", "date": "2024-10-22 12:46:39", "tag": "Fixed", "scope": "changelog", "description": "virgule "}
+{"commit": "3874b6a328390444efa1a244b4fe8b38065a0f9a", "date": "2024-10-22 14:04:58", "tag": "Fixed", "scope": "changelog", "description": "Fixed(changelog)\n\nfixed virgule bug "}
 ]
