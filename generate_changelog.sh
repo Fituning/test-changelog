@@ -75,7 +75,7 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
 
     # Concaténer la description et ajouter le commit au fichier JSON
     counter=$((counter + 1))
-    echo -n "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}," >> "$JSON_FILE"
+    echo -n "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}" >> "$JSON_FILE"
     # Ajouter une virgule entre les commits, sauf pour le dernier
     if [ $counter -lt $commit_count ]; then
         echo "," >> "$JSON_FILE"
@@ -89,23 +89,22 @@ echo "]" >> "$JSON_FILE"
 
 echo "Le fichier JSON a été mis à jour avec succès."
 
-# Mise à jour du fichier CHANGELOG.md avec les nouveaux commits
-# Créer un en-tête pour le fichier CHANGELOG.md s'il n'existe pas
-if [ ! -f "$CHANGELOG_FILE" ]; then
-  echo "# Changelog" > "$CHANGELOG_FILE"
-  echo "" >> "$CHANGELOG_FILE"
-  echo "| Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |" >> "$CHANGELOG_FILE"
-  echo "|-------------------|--------------------|--------------|---------------|---------------------|" >> "$CHANGELOG_FILE"
-fi
+# Régénérer entièrement le fichier CHANGELOG.md en triant les commits du plus récent au plus ancien
+echo "# Changelog" > "$CHANGELOG_FILE"
+echo "" >> "$CHANGELOG_FILE"
+echo "| Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |" >> "$CHANGELOG_FILE"
+echo "|-------------------|--------------------|--------------|---------------|---------------------|" >> "$CHANGELOG_FILE"
 
-# Boucler sur les nouveaux commits et les ajouter au fichier CHANGELOG.md
-echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
-    commit_tag=$(echo "$commit_message" | grep -oP '^[A-Za-z]+')
-    commit_scope=$(echo "$commit_message" | grep -oP '\([A-Za-z0-9._-]+\)' | tr -d '()')
-    commit_description=$(echo "$commit_message" | sed -E 's/^[A-Za-z]+\([A-Za-z0-9._-]+\)\:?\ ?//' | sed 's/[[:space:]]\+/ /g')
+# Lire le fichier JSON et ajouter les informations dans le changelog du plus récent au plus ancien
+cat $JSON_FILE | grep -oP '{.*?}' | tac | while read -r line; do
+    commit_hash=$(echo $line | grep -oP '"commit":\s*"\K[^"]+')
+    commit_date=$(echo $line | grep -oP '"date":\s*"\K[^"]+')
+    commit_tag=$(echo $line | grep -oP '"tag":\s*"\K[^"]+')
+    commit_scope=$(echo $line | grep -oP '"scope":\s*"\K[^"]+')
+    commit_description=$(echo $line | grep -oP '"description":\s*"\K[^"]+')
 
     # Ajouter chaque ligne correctement dans le fichier CHANGELOG.md
     echo "| $commit_date | [$commit_hash]($REPO_URL/commit/$commit_hash) | **$commit_tag** | *$commit_scope* | $commit_description |" >> "$CHANGELOG_FILE"
 done
 
-echo "Le fichier CHANGELOG.md a été mis à jour avec les nouveaux commits."
+echo "Le fichier CHANGELOG.md a été mis à jour avec succès."
