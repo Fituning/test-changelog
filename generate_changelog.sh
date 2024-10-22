@@ -77,7 +77,7 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
 
     # Ajouter une virgule entre les commits, sauf pour le dernier
     if [ $counter -lt $commit_count ]; then
-        virgule =  ""
+        virgule =  ","
     else 
         virgule =  ","
     fi
