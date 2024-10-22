@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# URL de ton dépôt GitHub (remplace par ton URL)
-REPO_URL="https://github.com/ton-utilisateur/ton-repository"
+# Récupérer l'URL du dépôt Git automatiquement
+REPO_URL=$(git config --get remote.origin.url)
+REPO_URL=${REPO_URL/.git/}  # Supprimer le suffixe .git si nécessaire
 
 # Fichier changelog
 CHANGELOG_FILE="CHANGELOG.md"
@@ -40,7 +41,7 @@ git log --pretty=format:"%H;%cd;%s" --date=iso | while IFS=";" read commit_hash 
         description=$commit_message
     fi
 
-    # Formater la ligne avec les colonnes requises
+    # Formater la ligne avec les colonnes requises et ajouter le lien vers le commit
     commit_link="[$commit_hash]($REPO_URL/commit/$commit_hash)"
     echo "| $commit_date | $commit_link | **$tag** | *$file_component* | $description |" >> $CHANGELOG_FILE
 done
