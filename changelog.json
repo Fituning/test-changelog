@@ -71,5 +71,6 @@
 {"commit": "021c6802c346e52f6f80e7525a62e521aa2151be", "date": "2024-10-22 14:52:18", "tag": "", "scope": "", "description": "Update generate_changelog.sh "},
 {"commit": "ae6d99397d4ed4f084a0888a1295a4b3129418b5", "date": "2024-10-22 14:54:30", "tag": "", "scope": "", "description": "Update generate_changelog.sh "},
 {"commit": "d52c1914e5cda67974e73565eab67e9434762ace", "date": "2024-10-22 14:55:37", "tag": "", "scope": "", "description": "Update changelog.json "},
-{"commit": "a9f8a9a239d28e0bcec2909bef917e9a5945ca09", "date": "2024-10-22 15:01:15", "tag": "", "scope": "", "description": "Update generate_changelog.sh "}
-{"commit": "06dcabd3f157b4b4b89d2cc06de824f2f2cef53d", "date": "2024-10-22 15:03:05", "tag": "", "scope": "", "description": "Update generate_changelog.sh "},]
+{"commit": "a9f8a9a239d28e0bcec2909bef917e9a5945ca09", "date": "2024-10-22 15:01:15", "tag": "", "scope": "", "description": "Update generate_changelog.sh "},
+{"commit": "06dcabd3f157b4b4b89d2cc06de824f2f2cef53d", "date": "2024-10-22 15:03:05", "tag": "", "scope": "", "description": "Update generate_changelog.sh "},
+]
