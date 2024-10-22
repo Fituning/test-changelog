@@ -68,3 +68,5 @@
 {"commit": "9994c31cf6323adfb9d460dfda7830a4e44037d9", "date": "2024-10-22 11:14:09", "tag": "", "scope": "", "description": "Update update_changelog.yml "},
 {"commit": "9232275eb42ba35c9dab8af3a42c132eaccc35f0", "date": "2024-10-22 11:17:00", "tag": "Fixed", "scope": "changelog", "description": "Fixed(changelog)\n\n- corection de bug de saut de ligne\n- prise en compte des derniers commits uniquement "}
 ]
+{"commit": "203c1caadb507073df04726d5e29e62323c3c9a5", "date": "2024-10-22 11:22:01", "tag": "Fixed", "scope": "changelog", "description": "Fixed(changelog)\n\ncorrection de bug génération du json "}
+]
