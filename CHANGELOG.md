@@ -2,6 +2,7 @@
 
 | Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |
 |-------------------|--------------------|--------------|---------------|---------------------|
+| 2024-10-22 16:14:53 | [a9e11262dd109935dbb377a763f89afbeec0f0aa](https://github.com/Fituning/test-changelog/commit/a9e11262dd109935dbb377a763f89afbeec0f0aa) | **Update** | *generate_changelog.sh* |  |
 | 2024-10-22 16:12:56 | [b8d55954618dda79c74bbe14adfa81347c973f51](https://github.com/Fituning/test-changelog/commit/b8d55954618dda79c74bbe14adfa81347c973f51) | **Update** | *changelog.json* |  |
 | 2024-10-22 16:11:49 | [52803f8af3932873ded8259b6be348bf6ff2cc7e](https://github.com/Fituning/test-changelog/commit/52803f8af3932873ded8259b6be348bf6ff2cc7e) | **Change** | *generate_changelog.sh* |  change for multiple commit push |
 | 2024-10-22 15:48:29 | [44d361da233e582a835ca6515d0b4eecfebda7dc](https://github.com/Fituning/test-changelog/commit/44d361da233e582a835ca6515d0b4eecfebda7dc) | **Change** | *generate_changelog_global.sh* |  new formalise name system  |

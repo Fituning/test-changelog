@@ -84,4 +84,4 @@
 {"commit": "44d361da233e582a835ca6515d0b4eecfebda7dc", "date": "2024-10-22 15:48:29", "tag": "Change", "scope": "generate_changelog_global.sh", "description": " new formalise name system "},
 {"commit": "52803f8af3932873ded8259b6be348bf6ff2cc7e", "date": "2024-10-22 16:11:49", "tag": "Change", "scope": "generate_changelog.sh", "description": " change for multiple commit push"},
 {"commit": "b8d55954618dda79c74bbe14adfa81347c973f51", "date": "2024-10-22 16:12:56", "tag": "Update", "scope": "changelog.json", "description": ""}
-]
+{"commit": "a9e11262dd109935dbb377a763f89afbeec0f0aa", "date": "2024-10-22 16:14:53", "tag": "Update", "scope": "generate_changelog.sh", "description": ""},]
