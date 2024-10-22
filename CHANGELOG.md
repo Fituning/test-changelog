@@ -2,6 +2,10 @@
 
 | Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |
 |-------------------|--------------------|--------------|---------------|---------------------|
+| 2024-10-22 15:01:15 | [a9f8a9a239d28e0bcec2909bef917e9a5945ca09](https://github.com/Fituning/test-changelog/commit/a9f8a9a239d28e0bcec2909bef917e9a5945ca09) | **** | ** | Update generate_changelog.sh  |
+| 2024-10-22 14:55:37 | [d52c1914e5cda67974e73565eab67e9434762ace](https://github.com/Fituning/test-changelog/commit/d52c1914e5cda67974e73565eab67e9434762ace) | **** | ** | Update changelog.json  |
+| 2024-10-22 14:54:30 | [ae6d99397d4ed4f084a0888a1295a4b3129418b5](https://github.com/Fituning/test-changelog/commit/ae6d99397d4ed4f084a0888a1295a4b3129418b5) | **** | ** | Update generate_changelog.sh  |
+| 2024-10-22 14:52:18 | [021c6802c346e52f6f80e7525a62e521aa2151be](https://github.com/Fituning/test-changelog/commit/021c6802c346e52f6f80e7525a62e521aa2151be) | **** | ** | Update generate_changelog.sh  |
 | 2024-10-22 14:44:14 | [10ef6b438ab00c440127eaf7dc42501db11e4dce](https://github.com/Fituning/test-changelog/commit/10ef6b438ab00c440127eaf7dc42501db11e4dce) | **** | ** | Update generate_changelog.sh  |
 | 2024-10-22 14:40:42 | [4977eb4f7a8ebd975874ec4be6b9c58584912156](https://github.com/Fituning/test-changelog/commit/4977eb4f7a8ebd975874ec4be6b9c58584912156) | **** | ** | Update generate_changelog.sh  |
 | 2024-10-22 14:39:13 | [f76538d0899022faecbb21e056d2007b0b70f6b6](https://github.com/Fituning/test-changelog/commit/f76538d0899022faecbb21e056d2007b0b70f6b6) | **** | ** | Update generate_changelog.sh  |
@@ -71,6 +75,3 @@
 | 2024-10-21 11:24:33 | [ee05750f00c356c0464c34c1f2b903e753ed0bc0](https://github.com/Fituning/test-changelog/commit/ee05750f00c356c0464c34c1f2b903e753ed0bc0) | **** | ** | Revert \ |
 | 2024-10-21 11:07:17 | [4737f03387b0cb8ab840f7723e8bae0004375bac](https://github.com/Fituning/test-changelog/commit/4737f03387b0cb8ab840f7723e8bae0004375bac) | **feat** | *style* | ajout du fichier style.css [changelog]  |
 | 2024-10-21 10:02:45 | [e15088ccbaeaf31f23d022c01b04a45f66cb26aa](https://github.com/Fituning/test-changelog/commit/e15088ccbaeaf31f23d022c01b04a45f66cb26aa) | **** | ** | Initial commit9bf36f4d8e5abb58ae013c3c266d167786580ee5;2024-10-21 10:16:08;#feat index  |
-| 2024-10-22 14:52:18 | [021c6802c346e52f6f80e7525a62e521aa2151be](https://github.com/Fituning/test-changelog/commit/021c6802c346e52f6f80e7525a62e521aa2151be) | **Update** | ** | Update generate_changelog.sh |
-| 2024-10-22 14:54:30 | [ae6d99397d4ed4f084a0888a1295a4b3129418b5](https://github.com/Fituning/test-changelog/commit/ae6d99397d4ed4f084a0888a1295a4b3129418b5) | **Update** | ** | Update generate_changelog.sh |
-| 2024-10-22 14:55:37 | [d52c1914e5cda67974e73565eab67e9434762ace](https://github.com/Fituning/test-changelog/commit/d52c1914e5cda67974e73565eab67e9434762ace) | **Update** | ** | Update changelog.json |
