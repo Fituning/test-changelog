@@ -56,13 +56,10 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
     fi
     full_description=$(echo "$full_description" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g')
 
-    if [[ $commit_message =~ ^([A-Za-z]+)\(([A-Za-z0-9._-]+)\)\:?\ ?(.*) ]]; then
+    if [[ $commit_message =~ ^([A-Za-z]+)\ ([A-Za-z0-9._-]+)\ ?(.*) ]]; then
         tag="${BASH_REMATCH[1]}"
         file_component="${BASH_REMATCH[2]}"
         description="${BASH_REMATCH[3]}"
-        if [[ $description == *:* ]]; then
-            description=$(echo "$description" | cut -d':' -f2-)
-        fi
     elif [[ $commit_message =~ ^Merge.* ]]; then
         tag="Merge"
         file_component=""
@@ -73,9 +70,9 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
         description=$commit_message
     fi
 
-     # Incrémenter le compteur pour savoir si nous sommes au dernier commit
+    # Incrémenter le compteur pour savoir si nous sommes au dernier commit
     counter=$((counter + 1))
-    
+
     # Ajouter chaque commit au JSON avec la description modifiée
     echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$description\"}," >> $JSON_FILE
 done
