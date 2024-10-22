@@ -24,7 +24,6 @@ if [ ! -f "$JSON_FILE" ]; then
 else
   # Supprimer la dernière ligne pour pouvoir ajouter de nouveaux commits proprement
   sed -i '$ d' "$JSON_FILE"
-  echo "," >> "$JSON_FILE"
 fi
 
 # Obtenir les nouveaux commits entre les deux SHA du plus ancien au plus récent
@@ -76,7 +75,7 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
 
     # Concaténer la description et ajouter le commit au fichier JSON
     counter=$((counter + 1))
-    echo -n "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}" >> "$JSON_FILE"
+    echo -n "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}," >> "$JSON_FILE"
     # Ajouter une virgule entre les commits, sauf pour le dernier
     if [ $counter -lt $commit_count ]; then
         echo "," >> "$JSON_FILE"
