@@ -1,22 +1,27 @@
 #!/bin/bash
 
-# Récupérer l'URL du dépôt Git automatiquement
+# Récupérer l'URL du dépôt Git
 REPO_URL=$(git config --get remote.origin.url)
-REPO_URL=${REPO_URL/.git/}  # Supprimer le suffixe .git si nécessaire
+REPO_URL=${REPO_URL/.git/}
 
-# Fichier changelog
+# Fichier changelog et JSON
 CHANGELOG_FILE="CHANGELOG.md"
+JSON_FILE="changelog.json"
 
-# En-tête du changelog
-echo "# Changelog" > $CHANGELOG_FILE
-echo "" >> $CHANGELOG_FILE
+# Récupérer les derniers commits non poussés
+last_push=$(git rev-parse @{u})
+new_commits=$(git log $last_push..HEAD --pretty=format:"%H;%cd;%s" --date=iso-local)
 
-# Ajouter les colonnes au changelog
-echo "| Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |" >> $CHANGELOG_FILE
-echo "|-------------------|--------------------|--------------|---------------|---------------------|" >> $CHANGELOG_FILE
+# Si le fichier JSON n'existe pas encore, créer une structure de base
+if [ ! -f "$JSON_FILE" ]; then
+  echo "[" > $JSON_FILE
+else
+  # Retirer la dernière virgule si le JSON existe pour append proprement
+  sed -i '$ s/,$//' $JSON_FILE
+fi
 
-# Obtenir les commits du plus récent au plus ancien
-git log --pretty=format:"%H;%cd;%s" --date=iso | while IFS=";" read commit_hash commit_date commit_message; do
+# Ajouter les nouveaux commits au fichier JSON
+echo "$new_commits" | while IFS=";" read commit_hash commit_date commit_message; do
     # Ignorer les commits qui commencent par '#'
     if [[ $commit_message == \#* ]]; then
         continue
@@ -41,17 +46,19 @@ git log --pretty=format:"%H;%cd;%s" --date=iso | while IFS=";" read commit_hash 
         description=$commit_message
     fi
 
-    # Formater la ligne avec les colonnes requises et ajouter le lien vers le commit
-    commit_link="[$commit_hash]($REPO_URL/commit/$commit_hash)"
-    echo "| $commit_date | $commit_link | **$tag** | *$file_component* | $description |" >> $CHANGELOG_FILE
+    # Ajouter au JSON
+    echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$description\"}," >> $JSON_FILE
 done
 
-
-
-# Générer un fichier JSON
-JSON_FILE="changelog.json"
-echo "[" > $JSON_FILE
-
-git log --pretty=format:'{"commit": "%h", "date": "%cd", "message": "%s"},' --date=short --reverse | sed '$ s/,$//' >> $JSON_FILE
-
+# Fermer la structure JSON proprement
 echo "]" >> $JSON_FILE
+
+# Maintenant utiliser le JSON pour mettre à jour le fichier CHANGELOG.md
+echo "# Changelog" > $CHANGELOG_FILE
+echo "" >> $CHANGELOG_FILE
+echo "| Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |" >> $CHANGELOG_FILE
+echo "|-------------------|--------------------|--------------|---------------|---------------------|" >> $CHANGELOG_FILE
+
+# Lire le JSON et mettre à jour le fichier changelog
+jq -r '.[] | "| \(.date) | [\(.commit)]('$REPO_URL'/commit/\(.commit)) | \(.tag) | \(.scope) | \(.description) |"' $JSON_FILE >> $CHANGELOG_FILE
+
