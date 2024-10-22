@@ -53,7 +53,3 @@ echo "[" > $JSON_FILE
 git log --pretty=format:'{"commit": "%h", "date": "%cd", "message": "%s"},' --date=short --reverse | sed '$ s/,$//' >> $JSON_FILE
 
 echo "]" >> $JSON_FILE
-
-
-# Convertir le changelog en PDF
-pandoc CHANGELOG.md -o CHANGELOG.pdf
