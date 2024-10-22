@@ -53,3 +53,161 @@
 | 2024-10-21 11:24:39 | [b8df536661c8c8d292d1fb433950c25b8d5b84fa](https://github.com/Fituning/test-changelog/commit/b8df536661c8c8d292d1fb433950c25b8d5b84fa) | **** | ** | Revert \ |
 | 2024-10-21 11:24:33 | [ee05750f00c356c0464c34c1f2b903e753ed0bc0](https://github.com/Fituning/test-changelog/commit/ee05750f00c356c0464c34c1f2b903e753ed0bc0) | **** | ** | Revert \ |
 | 2024-10-21 11:07:17 | [4737f03387b0cb8ab840f7723e8bae0004375bac](https://github.com/Fituning/test-changelog/commit/4737f03387b0cb8ab840f7723e8bae0004375bac) | **feat** | *style* | ajout du fichier style.css [changelog]  |
+## Derniers commits
+
+## Fixed(changelog) - 2024-10-22 12:26:46
+Fixed(changelog) 
+
+## feat(style) - 2024-10-21 11:07:17
+ajout du fichier style.css [changelog] 
+
+## Commit ee05750f00c356c0464c34c1f2b903e753ed0bc0 - 2024-10-21 11:24:33
+Revert \
+
+## Commit b8df536661c8c8d292d1fb433950c25b8d5b84fa - 2024-10-21 11:24:39
+Revert \
+
+## Commit 5dbc10dce036e12c87e57193b24e575c342fe949 - 2024-10-21 11:24:45
+Revert \
+
+## Commit 5a76c2ac8035885394fc2f5330b83de19e13515e - 2024-10-21 11:24:49
+Revert \
+
+## feat(changelog) - 2024-10-21 12:09:14
+add automatic changelog 
+
+## feat(changelog) - 2024-10-21 12:17:18
+add autochangelog 
+
+## Commit 5f88daf3f8c17ae54e5e8917733874eb0271d0eb - 2024-10-21 13:51:23
+Revert \
+
+## Commit 2a2b2e423c38253e1887bff1ec6d9395b924e37c - 2024-10-21 13:51:29
+Revert \
+
+## Added(changelog) - 2024-10-21 16:32:13
+ Added automatic Changelog prsonalized 
+
+## Added(index.html) - 2024-10-21 16:33:43
+ added new section 
+
+## Commit 25b8bb447fc0e07bf979664e3708b6cba276dd28 - 2024-10-21 16:34:46
+Mise à jour automatique du changelog 
+
+## Commit a5333b8afcf11d623c2335482464c2ae0c0cea8f - 2024-10-21 16:35:18
+Mise à jour automatique du changelog 
+
+## Fix(gitignore) - 2024-10-21 16:38:46
+add .obsidian folder 
+
+## Removed(index.html) - 2024-10-21 16:42:07
+remove section 
+
+## Adde(test) - 2024-10-21 17:07:48
+ca me gave ptn 
+
+## Commit e1c5c209281a10a7f4205f62e6bc2dfc8c0213dd - 2024-10-21 17:09:05
+Mise à jour automatique du changelog 
+
+## Removed(index.html) - 2024-10-22 08:32:01
+delete last section 
+
+## Added(actions) - 2024-10-22 08:49:37
+New action test 
+
+## Fixed(actions) - 2024-10-22 08:58:53
+Add token 
+
+## Fixed(actions) - 2024-10-22 09:02:13
+fix repo name 
+
+## Removed(actions) - 2024-10-22 09:06:21
+remove push section 
+
+## Added(index) - 2024-10-22 09:07:47
+added new section 
+
+## Added(actions) - 2024-10-22 09:11:45
+actions push changelog modif 
+
+## Commit 83c85ffa5df99f43cea0d015a39fb53acf61fc28 - 2024-10-22 07:11:55
+Update CHANGELOG.md automatically 
+
+## Removed(index.html) - 2024-10-22 09:13:58
+remove last section 
+
+## Changed(changelog.md) - 2024-10-22 09:20:21
+added commits 
+
+## Commit a6e00fc6d30426c0e466c2ffdb924ef40bc69b20 - 2024-10-22 07:20:33
+Update CHANGELOG.md automatically 
+
+## Commit 143a10ff4c8fb349fcd571bf5d5b44b40f2d17f7 - 2024-10-22 09:26:13
+Update update_changelog.yml 
+
+## Commit a99c141b7c460aed1e33ac2e21fcc60947f051ea - 2024-10-22 09:27:18
+Update update_changelog.yml 
+
+## Commit 87f4c31b330a31ccde9b469504fd517b4aa3aecf - 2024-10-22 07:27:28
+Update CHANGELOG.md automatically 
+
+## Commit 1b3ba6ad4b81c9110a697a90c88817ce638b72d0 - 2024-10-22 09:39:48
+Update update_changelog.yml 
+
+## Added(generate_changelog.sh) - 2024-10-22 09:40:55
+ Added new display for logs 
+
+## Commit 1ed1d9d3e3d41eb727c36fce29455d0c64d678b3 - 2024-10-22 09:41:02
+Merge branch 'main' of https://github.com/Fituning/test-changelog 
+
+## Commit 542553dd8349f6024cca45d057fa03eda8d04df2 - 2024-10-22 09:43:56
+Update update_changelog.yml 
+
+## Fixed(generate_changelog.sh) - 2024-10-22 09:52:28
+ fixed display of commits 
+
+## Commit da4fa60d4a59bfda9dd3b8ae233f14a49920cc69 - 2024-10-22 09:52:37
+Merge branch 'main' of https://github.com/Fituning/test-changelog 
+
+## Commit 55bf4580e59c9d7830b99256c74e1a30fc600a47 - 2024-10-22 10:09:40
+Update update_changelog.yml 
+
+## Commit 22b17b6ac40498b0b5a2ed581cae7eee894d20dc - 2024-10-22 10:14:14
+Merge branch 'main' of https://github.com/Fituning/test-changelog 
+
+## Changed(generate_changelog.sh) - 2024-10-22 10:25:59
+ - correction de l'affichage des commits - mise a jour du .JSON et du .MD - optimisation de l'algorithme - traitement des derniers commits uniquement 
+
+## Changed(generate_changelog.sh) - 2024-10-22 10:31:43
+ - correction de l'affichage des commits - mise a jour du .JSON et du .MD - optimisation de l'algorithme - traitement des derniers commits uniquement 
+
+## Commit d529967c6234f925027180ef81d5e862b186fd2c - 2024-10-22 10:31:52
+Merge branch 'main' of https://github.com/Fituning/test-changelog 
+
+## Changed(changelog) - 2024-10-22 10:40:47
+ - correction de l'affichage des commits - mise a jour du .JSON et du .MD - optimisation de l'algorithme - traitement des derniers commits uniquement - prise en compte des carractères spéciaux pour ne pas polluer le json - ajout d'un fichier de formatage global a lancer manuellement 
+
+## Commit 9994c31cf6323adfb9d460dfda7830a4e44037d9 - 2024-10-22 11:14:09
+Update update_changelog.yml 
+
+## Fixed(changelog) - 2024-10-22 11:17:00
+ - corection de bug de saut de ligne - prise en compte des derniers commits uniquement 
+
+## Fixed(changelog) - 2024-10-22 11:22:01
+ correction de bug génération du json 
+
+## Fixed(changelog) - 2024-10-22 11:25:47
+ fix bug json 
+
+## Fixed(changelog) - 2024-10-22 11:28:11
+fix fix title in description 
+
+## Fixed(changelog) - 2024-10-22 11:31:45
+global fixed global changelog genération 
+
+## Commit 997bc0687109f66edd2db4352eff4dd0d101166f - 2024-10-22 11:31:52
+Merge branch 'main' of https://github.com/Fituning/test-changelog 
+
+## Added(changelog) - 2024-10-22 12:17:24
+markdown writing in markdown file 
+

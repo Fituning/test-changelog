@@ -50,4 +50,6 @@
 {"commit": "b8df536661c8c8d292d1fb433950c25b8d5b84fa", "date": "2024-10-21 11:24:39", "tag": "", "scope": "", "description": "Revert \"feat(style): ajout du fichier style.css [changelog]\" This reverts commit 4737f03387b0cb8ab840f7723e8bae0004375bac. "},
 {"commit": "ee05750f00c356c0464c34c1f2b903e753ed0bc0", "date": "2024-10-21 11:24:33", "tag": "", "scope": "", "description": "Revert \"#fix(gitignore)\" This reverts commit a3bdd1601b271d1ce147a04e949e695a890be4f2. "},
 {"commit": "4737f03387b0cb8ab840f7723e8bae0004375bac", "date": "2024-10-21 11:07:17", "tag": "feat", "scope": "style", "description": "ajout du fichier style.css [changelog] "}
+,
+{"commit": "2cd7c7b652d5962ce8475fa2f444e69687611fbe", "date": "2024-10-22 12:26:46", "tag": "Fixed", "scope": "changelog", "description": "Fixed(changelog) "}
 ]
