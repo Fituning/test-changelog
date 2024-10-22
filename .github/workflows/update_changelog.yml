@@ -20,17 +20,22 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc
 
+      - name: Install LaTeX for PDF generation
+        run: |
+          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+
       - name: Run generate_changelog.sh
         run: |
           chmod +x ./generate_changelog.sh
           ./generate_changelog.sh
 
-      - name: Commit updated CHANGELOG.md
+      - name: Commit updated CHANGELOG.md and JSON
         run: |
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git add CHANGELOG.md
-          git commit -m "Update CHANGELOG.md automatically"
+          git add CHANGELOG.md changelog.json
+          git commit -m "#Update CHANGELOG.md and changelog.json automatically"
+      
               
       - name: Push changes
         env:
