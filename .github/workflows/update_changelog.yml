@@ -15,15 +15,6 @@ jobs:
         with:
           fetch-depth: 0  # Récupérer tout l'historique des commits
 
-      - name: Install Pandoc for PDF conversion
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc
-
-      - name: Install LaTeX for PDF generation
-        run: |
-          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
-
       - name: Run generate_changelog.sh
         run: |
           chmod +x ./generate_changelog.sh
