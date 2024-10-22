@@ -69,4 +69,6 @@
 {"commit": "9232275eb42ba35c9dab8af3a42c132eaccc35f0", "date": "2024-10-22 11:17:00", "tag": "Fixed", "scope": "changelog", "description": "Fixed(changelog)\n\n- corection de bug de saut de ligne\n- prise en compte des derniers commits uniquement "},
 {"commit": "2be2ded015eb02d39e9476c804d7d6d39b0bdf27", "date": "2024-10-22 09:17:14", "tag": "", "scope": "", "description": "#Update CHANGELOG.md and changelog.json automatically "},
 {"commit": "203c1caadb507073df04726d5e29e62323c3c9a5", "date": "2024-10-22 11:22:01", "tag": "Fixed", "scope": "changelog", "description": "Fixed(changelog)\n\ncorrection de bug génération du json "}
+,
+{"commit": "e542f425af3f77db7e40d2efa9c14d8facc859d2", "date": "2024-10-22 11:28:11", "tag": "Fixed", "scope": "changelog", "description": "fix\n\nfix title in description "}
 ]
