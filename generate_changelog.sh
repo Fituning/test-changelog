@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # URL de ton dépôt GitHub (remplace par ton URL)
-REPO_URL="https://github.com/Fituning/test-changelog"
+REPO_URL="https://github.com/ton-utilisateur/ton-repository"
 
 # Fichier changelog
 CHANGELOG_FILE="CHANGELOG.md"
@@ -21,10 +21,24 @@ git log --pretty=format:"%H;%cd;%s" --date=iso | while IFS=";" read commit_hash 
         continue
     fi
 
-    # Extraire le tag et le fichier/composant du message
-    tag=$(echo $commit_message | cut -d'(' -f1)
-    file_component=$(echo $commit_message | cut -d'(' -f2 | cut -d')' -f1)
-    description=$(echo $commit_message | cut -d')' -f2-)
+    # Extraire le tag et le fichier/composant uniquement si le format respecte Tag(scope)
+    if [[ $commit_message =~ ^[A-Za-z]+\([A-Za-z0-9._-]+\)\: ]]; then
+        tag=$(echo $commit_message | cut -d'(' -f1)
+        file_component=$(echo $commit_message | cut -d'(' -f2 | cut -d')' -f1)
+        description=$(echo $commit_message | cut -d')' -f2-)
+
+        # Si ":" est présent dans la description, extraire la partie avant et après le ":"
+        if [[ $description == *:* ]]; then
+            before_colon=$(echo $description | cut -d':' -f1)
+            after_colon=$(echo $description | cut -d':' -f2-)
+            description="$after_colon ($before_colon)"
+        fi
+    else
+        # Sinon, utiliser une description par défaut sans tag ni scope
+        tag=""
+        file_component=""
+        description=$commit_message
+    fi
 
     # Formater la ligne avec les colonnes requises
     commit_link="[$commit_hash]($REPO_URL/commit/$commit_hash)"
