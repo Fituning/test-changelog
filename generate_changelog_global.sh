@@ -8,23 +8,16 @@ REPO_URL=${REPO_URL/.git/}
 CHANGELOG_FILE="CHANGELOG.md"
 JSON_FILE="changelog.json"
 
-# Récupérer les derniers commits non poussés sans fuseau horaire
-last_push=$(git rev-parse @{u})
-new_commits=$(git log $last_push..HEAD --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S")
-
-# Si le fichier JSON n'existe pas encore, créer une structure de base
-if [ ! -f "$JSON_FILE" ]; then
-  echo "[" > $JSON_FILE
-else
-  # Retirer la dernière virgule si le JSON existe pour append proprement
-  sed -i '$ s/,$//' $JSON_FILE
+# Nettoyer le fichier JSON s'il existe déjà
+if [ -f "$JSON_FILE" ]; then
+  rm "$JSON_FILE"
 fi
 
-# Compteur pour vérifier si des commits ont été ajoutés
-commit_count=0
+# Créer une structure de base pour le fichier JSON
+echo "[" > $JSON_FILE
 
-# Ajouter les nouveaux commits au fichier JSON
-echo "$new_commits" | while IFS=";" read commit_hash commit_date commit_message; do
+# Obtenir tous les commits du dépôt du plus ancien au plus récent sans fuseau horaire
+git log --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S" --reverse | while IFS=";" read commit_hash commit_date commit_message; do
     # Ignorer les commits qui commencent par '#'
     if [[ $commit_message == \#* ]]; then
         continue
@@ -52,21 +45,12 @@ echo "$new_commits" | while IFS=";" read commit_hash commit_date commit_message;
         description=$commit_message
     fi
 
-    # Ajouter au JSON
-    if [ $commit_count -ne 0 ]; then
-        echo "," >> $JSON_FILE  # Ajouter une virgule avant chaque commit sauf le premier
-    fi
-
-    echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$description\"}" >> $JSON_FILE
-
-    commit_count=$((commit_count + 1))
+    # Ajouter chaque commit au JSON
+    echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$description\"}," >> $JSON_FILE
 done
 
-# Fermer la structure JSON proprement si des commits ont été ajoutés
-if [ $commit_count -ne 0 ]; then
-  echo "]" >> $JSON_FILE
-else
-  echo "[]" > $JSON_FILE
-fi
+# Retirer la dernière virgule et fermer la structure JSON proprement
+sed -i '$ s/,$//' $JSON_FILE
+echo "]" >> $JSON_FILE
 
-echo "Les nouveaux commits non poussés ont été ajoutés au JSON."
+echo "Le fichier JSON a été généré et nettoyé avec succès."
