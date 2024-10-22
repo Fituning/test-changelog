@@ -8,6 +8,16 @@ REPO_URL=${REPO_URL/.git/}
 CHANGELOG_FILE="CHANGELOG.md"
 JSON_FILE="changelog.json"
 
+# Récupérer les SHA des commits avant et après le push
+last_sha=$1
+new_sha=$2
+
+# Vérifier si les variables sont définies
+if [ -z "$last_sha" ] || [ -z "$new_sha" ]; then
+  echo "Les SHA des commits avant et après le push doivent être spécifiés."
+  exit 1
+fi
+
 # Lire le JSON existant (si présent) et le copier temporairement
 if [ -f "$JSON_FILE" ]; then
   cp "$JSON_FILE" temp.json
@@ -15,8 +25,8 @@ else
   echo "[" > temp.json
 fi
 
-# Obtenir les commits non poussés
-commits=$(git log origin/main..HEAD --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S")
+# Obtenir les commits entre les deux SHA du plus récent au plus ancien
+commits=$(git log --reverse $last_sha..$new_sha --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S")
 
 # Vérifier si des commits sont présents
 if [ -z "$commits" ]; then
@@ -90,7 +100,7 @@ mv temp.json "$JSON_FILE"
 
 echo "Le fichier JSON a été mis à jour avec succès."
 
-# Créer un en-tête pour le fichier CHANGELOG.md
+# Créer un en-tête pour le fichier CHANGELOG.md s'il n'existe pas
 if [ ! -f "$CHANGELOG_FILE" ]; then
   echo "# Changelog" > $CHANGELOG_FILE
   echo "" >> $CHANGELOG_FILE
@@ -101,7 +111,7 @@ echo "## Derniers commits" >> $CHANGELOG_FILE
 echo "" >> $CHANGELOG_FILE
 
 # Boucler sur le fichier JSON pour extraire les informations et les formater dans CHANGELOG.md
-cat $JSON_FILE | grep -oP '{.*?}' | while read -r commit; do
+cat $JSON_FILE | grep -oP '{.*?}' | tac | while read -r commit; do
     commit_hash=$(echo $commit | grep -oP '"commit":\s*"\K[^"]+')
     commit_date=$(echo $commit | grep -oP '"date":\s*"\K[^"]+')
     commit_tag=$(echo $commit | grep -oP '"tag":\s*"\K[^"]+')

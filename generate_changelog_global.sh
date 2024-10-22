@@ -16,8 +16,8 @@ fi
 # Créer une structure de base pour le fichier JSON
 echo "[" > $JSON_FILE
 
-# Obtenir tous les commits du dépôt du plus ancien au plus récent sans fuseau horaire
-git log --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S" --reverse | while IFS=";" read commit_hash commit_date commit_message; do
+# Obtenir tous les commits poussés sur la branche principale du plus ancien au plus récent
+git log main --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S" | while IFS=";" read commit_hash commit_date commit_message; do
     # Vérifier si le commit message commence par un #
     if [[ $commit_message == \#* ]]; then
         continue
