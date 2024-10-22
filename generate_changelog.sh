@@ -31,10 +31,13 @@ commits=$(git log --reverse $last_sha..$new_sha --pretty=format:"%H;%cd;%s" --da
 commit_count=$(echo "$commits" | wc -l) # Compter le nombre de commits pour gérer la virgule
 counter=0 # Compteur pour savoir quand nous sommes au dernier commit
 
-echo "$commit_count"
-
 # Traiter chaque commit pour l'ajouter dans le fichier JSON
-echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
+IFS=$'\n' # Pour itérer ligne par ligne avec la boucle for
+for commit in $commits; do
+    commit_hash=$(echo "$commit" | cut -d ';' -f 1)
+    commit_date=$(echo "$commit" | cut -d ';' -f 2)
+    commit_message=$(echo "$commit" | cut -d ';' -f 3)
+
     # Ignorer les commits qui commencent par un "#"
     if [[ $commit_message == \#* ]]; then
         continue
@@ -69,10 +72,9 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
         description=$commit_message
     fi
 
-     # Concaténer la description et ajouter le commit au fichier JSON
+    # Concaténer la description et ajouter le commit au fichier JSON
     counter=$((counter + 1))
     echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}," >> "$JSON_FILE"
-
 done
 
 # Ajouter la fermeture du tableau JSON
