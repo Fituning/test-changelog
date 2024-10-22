@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Récupérer les SHA des commits avant et après le push
-last_sha=$1
-new_sha=$2
-
 # Récupérer l'URL du dépôt Git
 REPO_URL=$(git config --get remote.origin.url)
 REPO_URL=${REPO_URL/.git/}
@@ -12,72 +8,79 @@ REPO_URL=${REPO_URL/.git/}
 CHANGELOG_FILE="CHANGELOG.md"
 JSON_FILE="changelog.json"
 
-# Récupérer les commits entre les deux SHA
-new_commits=$(git log $last_sha..$new_sha --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S")
-
-# Si le fichier JSON n'existe pas encore, créer une structure de base
-if [ ! -f "$JSON_FILE" ]; then
-  echo "[" > $JSON_FILE
+# Lire le JSON existant (si présent) et le copier temporairement
+if [ -f "$JSON_FILE" ]; then
+  jq '.' "$JSON_FILE" > temp.json
 else
-  # Supprimer la dernière fermeture du tableau pour ajouter les nouveaux commits
-  sed -i '$ s/]/,/' $JSON_FILE
+  echo "[" > temp.json
 fi
 
-# Ajouter les nouveaux commits au fichier JSON
-echo "$new_commits" | while IFS=";" read commit_hash commit_date commit_message; do
+# Obtenir les commits non poussés
+commits=$(git log origin/main..HEAD --pretty=format:"%H;%cd;%s" --date=format:"%Y-%m-%d %H:%M:%S")
+
+# Vérifier si des commits sont présents
+if [ -z "$commits" ]; then
+  echo "Aucun nouveau commit à traiter."
+  exit 0
+fi
+
+# Supprimer la dernière ligne du fichier JSON temporaire pour éviter d'avoir la dernière virgule
+sed -i '$ d' temp.json
+
+# Ajouter un nouveau tableau JSON temporaire avec les nouveaux commits
+echo "," >> temp.json  # Ajoute une virgule pour séparer l'ancien contenu des nouveaux commits
+
+# Traiter chaque commit pour l'ajouter dans le fichier JSON
+first_commit=true
+echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
     # Accumuler les lignes suivantes pour le corps du commit
     commit_body=""
     while read body_line; do
-        # Si la ligne est vide, c'est la fin du commit
         if [ -z "$body_line" ]; then
             break
         fi
-        # Ajouter la ligne à la description du commit
         commit_body="$commit_body\n$body_line"
     done <<< "$(git show -s --format=%b $commit_hash)"
 
-    # Remplacer les guillemets doubles et simples dans les messages de commit et description
     commit_message=$(echo "$commit_message" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
     commit_body=$(echo "$commit_body" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
+    
+    full_description="$commit_message"
+    if [[ ! -z "$commit_body" ]]; then
+        full_description="$full_description\n$commit_body"
+    fi
+    full_description=$(echo "$full_description" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g')
 
-    # Extraire le tag et le fichier/composant uniquement si le format respecte Tag(scope)
     if [[ $commit_message =~ ^([A-Za-z]+)\(([A-Za-z0-9._-]+)\)\:?\ ?(.*) ]]; then
         tag="${BASH_REMATCH[1]}"
         file_component="${BASH_REMATCH[2]}"
         description="${BASH_REMATCH[3]}"
-
-        # Si ":" est dans la description, on retire la partie avant les deux-points du titre
         if [[ $description == *:* ]]; then
             description=$(echo "$description" | cut -d':' -f2-)
         fi
     elif [[ $commit_message =~ ^Merge.* ]]; then
-        # Si c'est un commit de merge
         tag="Merge"
         file_component=""
         description=$commit_message
     else
-        # Si pas de format Tag(scope), utiliser toute la description comme elle est
         tag=""
         file_component=""
         description=$commit_message
     fi
 
-    # Concaténer le corps du commit dans la description principale
-    if [[ ! -z "$commit_body" ]]; then
-        description="$description\n$commit_body"
+    # Concaténer la description et ajouter le commit au fichier JSON
+    if [ "$first_commit" = true ]; then
+        echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}" >> temp.json
+        first_commit=false
+    else
+        echo ",{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}" >> temp.json
     fi
-
-    # Concaténer toutes les lignes du commit body dans une seule description, et supprimer les nouvelles lignes excessives
-    description=$(echo "$description" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g')
-
-    # Ajouter chaque commit au JSON avec la description sans le titre si tag et scope sont présents
-    echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$description\"}," >> $JSON_FILE
 done
 
-# Supprimer la dernière virgule après le dernier commit
-sed -i '$ s/,$//' $JSON_FILE
+# Ajouter la fermeture du tableau JSON
+echo "]" >> temp.json
 
-# Fermer le tableau JSON proprement
-echo "]" >> $JSON_FILE
+# Remplacer le fichier JSON d'origine par le fichier temporaire
+mv temp.json "$JSON_FILE"
 
-echo "Le fichier JSON a été mis à jour correctement."
+echo "Le fichier JSON a été mis à jour avec succès."
