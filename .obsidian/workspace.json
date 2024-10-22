@@ -77,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "60404f1a6b03c535",
@@ -162,7 +163,7 @@
       "command-palette:Ouvrir la palette de commandes": false
     }
   },
-  "active": "8dd66ac171badb28",
+  "active": "2871fec1dbd202b5",
   "lastOpenFiles": [
     "changelog.json",
     "Nouveau dossier",

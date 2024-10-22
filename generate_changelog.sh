@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # URL de ton dépôt GitHub (remplace par ton URL)
-REPO_URL="https://github.com/ton-utilisateur/ton-repository"
+REPO_URL="https://github.com/Fituning/test-changelog"
 
 # Fichier changelog
 CHANGELOG_FILE="CHANGELOG.md"
