@@ -69,12 +69,12 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
 
      # Concaténer la description et ajouter le commit au fichier JSON
     counter=$((counter + 1))
-    echo -n "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}," >> "$JSON_FILE"
+    echo -n "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}" >> "$JSON_FILE"
 
 done
 
 # Ajouter la fermeture du tableau JSON
-echo -n "]" >> "$JSON_FILE"
+echo "]" >> "$JSON_FILE"
 
 echo "Le fichier JSON a été mis à jour avec succès."
 
