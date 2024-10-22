@@ -10,18 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Run generate_changelog.sh
-      run: |
-        chmod +x ./generate_changelog.sh
-        ./generate_changelog.sh
+      - name: Run generate_changelog.sh
+        run: |
+          chmod +x ./generate_changelog.sh
+          ./generate_changelog.sh
 
-    - name: Commit updated CHANGELOG.md
-      run: |
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        git add CHANGELOG.md
-        git commit -m "Update CHANGELOG.md automatically"
-        git push
+      - name: Commit updated CHANGELOG.md
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git add CHANGELOG.md
+          git commit -m "Update CHANGELOG.md automatically"
+      
+      - name: Push changes
+        env:
+          TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/ton-utilisateur/ton-repository.git
+          git push origin main
