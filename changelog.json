@@ -44,4 +44,6 @@
 {"commit": "b8e5470", "date": "2024-10-22", "message": "#Update CHANGELOG.md and changelog.json automatically"},
 {"commit": "ec43a66", "date": "2024-10-22", "message": "Fixed(generate_changelog.sh)"},
 {"commit": "da4fa60", "date": "2024-10-22", "message": "Merge branch 'main' of https://github.com/Fituning/test-changelog"},
-{"commit": "f5e27bc", "date": "2024-10-22", "message": "# modif gitignore"}]
+{"commit": "f5e27bc", "date": "2024-10-22", "message": "# modif gitignore"},
+{"commit": "c5f5c34", "date": "2024-10-22", "message": "#Update CHANGELOG.md and changelog.json automatically"},
+{"commit": "4e28398", "date": "2024-10-22", "message": "#modif"}]
