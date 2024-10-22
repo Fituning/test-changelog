@@ -40,31 +40,38 @@ echo "$new_commits" | while IFS=";" read commit_hash commit_date commit_message;
     commit_message=$(echo "$commit_message" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
     commit_body=$(echo "$commit_body" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
 
-    # Concaténer le corps du commit dans la description principale
-    full_description="$commit_message"
-    if [[ ! -z "$commit_body" ]]; then
-        full_description="$full_description\n$commit_body"
-    fi
-
-    # Concaténer toutes les lignes du commit body dans une seule description, et supprimer les nouvelles lignes excessives
-    full_description=$(echo "$full_description" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g')
-
     # Extraire le tag et le fichier/composant uniquement si le format respecte Tag(scope)
     if [[ $commit_message =~ ^([A-Za-z]+)\(([A-Za-z0-9._-]+)\)\:?\ ?(.*) ]]; then
         tag="${BASH_REMATCH[1]}"
         file_component="${BASH_REMATCH[2]}"
+        description="${BASH_REMATCH[3]}"
+
+        # Si ":" est dans la description, on retire la partie avant les deux-points du titre
+        if [[ $description == *:* ]]; then
+            description=$(echo "$description" | cut -d':' -f2-)
+        fi
     elif [[ $commit_message =~ ^Merge.* ]]; then
         # Si c'est un commit de merge
         tag="Merge"
         file_component=""
+        description=$commit_message
     else
-        # Sinon, utiliser une description par défaut sans tag ni scope
+        # Si pas de format Tag(scope), utiliser toute la description comme elle est
         tag=""
         file_component=""
+        description=$commit_message
     fi
 
-    # Ajouter chaque commit au JSON avec la description concaténée
-    echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}," >> $JSON_FILE
+    # Concaténer le corps du commit dans la description principale
+    if [[ ! -z "$commit_body" ]]; then
+        description="$description\n$commit_body"
+    fi
+
+    # Concaténer toutes les lignes du commit body dans une seule description, et supprimer les nouvelles lignes excessives
+    description=$(echo "$description" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g')
+
+    # Ajouter chaque commit au JSON avec la description sans le titre si tag et scope sont présents
+    echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$description\"}," >> $JSON_FILE
 done
 
 # Supprimer la dernière virgule après le dernier commit
