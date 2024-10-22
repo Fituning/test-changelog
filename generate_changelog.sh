@@ -76,13 +76,16 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
     counter=$((counter + 1))
 
     # Ajouter chaque commit au JSON avec la description modifiée
-    echo -n "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$description\"}" >> $JSON_FILE
+    echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$description\"}" >> $JSON_FILE
 
     # Ajouter une virgule entre les commits, sauf pour le dernier
     if [ $counter -lt $commit_count ]; then
-        echo -n "," >> $JSON_FILE
+        echo "," >> $JSON_FILE
     fi
 done
+
+# Fermer le tableau JSON proprement
+echo "]" >> $JSON_FILE
 
 echo "Le fichier JSON a été généré et nettoyé avec succès."
 
