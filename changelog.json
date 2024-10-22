@@ -82,4 +82,5 @@
 {"commit": "1c9ae553dc329cb99ff8b26566824bafd5303163", "date": "2024-10-22 15:42:09", "tag": "Update", "scope": "generate_changelog.sh", "description": " test of description "},
 {"commit": "ea988f0fbecb2f53d41e4df92baca3d2a94c348c", "date": "2024-10-22 15:45:34", "tag": "Update", "scope": "generate_changelog.sh", "description": " test description "},
 {"commit": "44d361da233e582a835ca6515d0b4eecfebda7dc", "date": "2024-10-22 15:48:29", "tag": "Change", "scope": "generate_changelog_global.sh", "description": " new formalise name system "}
-{"commit": "063a86fe7de3abe3a3696474e76aa3cd59e85135", "date": "2024-10-22 16:04:27", "tag": "Update", "scope": "index.html", "description": " updater of html display"},]
+{"commit": "52803f8af3932873ded8259b6be348bf6ff2cc7e", "date": "2024-10-22 16:11:49", "tag": "Change", "scope": "generate_changelog.sh", "description": " change for multiple commit push"}
+]

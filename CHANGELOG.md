@@ -2,7 +2,7 @@
 
 | Date et Heure      | Commit (ID long)    | **Tag**      | *Scope*       | Description         |
 |-------------------|--------------------|--------------|---------------|---------------------|
-| 2024-10-22 16:04:27 | [063a86fe7de3abe3a3696474e76aa3cd59e85135](https://github.com/Fituning/test-changelog/commit/063a86fe7de3abe3a3696474e76aa3cd59e85135) | **Update** | *index.html* |  updater of html display |
+| 2024-10-22 16:11:49 | [52803f8af3932873ded8259b6be348bf6ff2cc7e](https://github.com/Fituning/test-changelog/commit/52803f8af3932873ded8259b6be348bf6ff2cc7e) | **Change** | *generate_changelog.sh* |  change for multiple commit push |
 | 2024-10-22 15:48:29 | [44d361da233e582a835ca6515d0b4eecfebda7dc](https://github.com/Fituning/test-changelog/commit/44d361da233e582a835ca6515d0b4eecfebda7dc) | **Change** | *generate_changelog_global.sh* |  new formalise name system  |
 | 2024-10-22 15:45:34 | [ea988f0fbecb2f53d41e4df92baca3d2a94c348c](https://github.com/Fituning/test-changelog/commit/ea988f0fbecb2f53d41e4df92baca3d2a94c348c) | **Update** | *generate_changelog.sh* |  test description  |
 | 2024-10-22 15:42:09 | [1c9ae553dc329cb99ff8b26566824bafd5303163](https://github.com/Fituning/test-changelog/commit/1c9ae553dc329cb99ff8b26566824bafd5303163) | **Update** | *generate_changelog.sh* |  test of description  |
