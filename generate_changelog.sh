@@ -38,7 +38,7 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
         continue
     fi
 
-    # Accumuler uniquement le corps du commit (description), pas le message de titre
+    # Accumuler les lignes suivantes pour le corps du commit (description)
     commit_body=""
     while read body_line; do
         if [ -z "$body_line" ]; then
@@ -47,14 +47,29 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
         commit_body="$commit_body $body_line"
     done <<< "$(git show -s --format=%b $commit_hash)"
 
-    # Nettoyage des retours à la ligne dans le commit body
-    commit_body=$(echo "$commit_body" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g')
+    # Nettoyage des guillemets et des retours à la ligne dans les messages de commit et la description
+    commit_message=$(echo "$commit_message" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
+    commit_body=$(echo "$commit_body" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
+    full_description="$commit_body"
 
-    # Incrémenter le compteur pour savoir si nous sommes au dernier commit
+    # Gestion du format "Tag Scope" et description
+    if [[ $commit_message =~ ^([A-Za-z]+)\ ([A-Za-z0-9._-]+)\ ?(.*) ]]; then
+        tag="${BASH_REMATCH[1]}"
+        file_component="${BASH_REMATCH[2]}"
+        description="${BASH_REMATCH[3]}"
+    elif [[ $commit_message =~ ^Merge.* ]]; then
+        tag="Merge"
+        file_component=""
+        description=$commit_message
+    else
+        tag=""
+        file_component=""
+        description=$commit_message
+    fi
+
+    # Concaténer la description et ajouter le commit au fichier JSON
     counter=$((counter + 1))
-    
-    # Ajouter chaque commit au JSON avec uniquement la description (corps du commit)
-    echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$commit_message\", \"scope\": \"\", \"description\": \"$commit_body\"}," >> $JSON_FILE
+    echo -n "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}," >> "$JSON_FILE"
 done
 
 # Ajouter la fermeture du tableau JSON
