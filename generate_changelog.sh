@@ -84,9 +84,6 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
     fi
 done
 
-# Fermer le tableau JSON proprement
-echo "]" >> $JSON_FILE
-
 echo "Le fichier JSON a été généré et nettoyé avec succès."
 
 # Créer un en-tête pour le fichier CHANGELOG.md
