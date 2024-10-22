@@ -19,8 +19,8 @@ new_commits=$(git log $last_sha..$new_sha --pretty=format:"%H;%cd;%s" --date=for
 if [ ! -f "$JSON_FILE" ]; then
   echo "[" > $JSON_FILE
 else
-  # Retirer la dernière virgule si le JSON existe pour append proprement
-  sed -i '$ s/,$//' $JSON_FILE
+  # Supprimer la dernière fermeture du tableau pour ajouter les nouveaux commits
+  sed -i '$ s/]/,/' $JSON_FILE
 fi
 
 # Ajouter les nouveaux commits au fichier JSON
@@ -67,7 +67,7 @@ echo "$new_commits" | while IFS=";" read commit_hash commit_date commit_message;
     echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}," >> $JSON_FILE
 done
 
-# Retirer la dernière virgule ajoutée après le dernier élément
+# Supprimer la dernière virgule après le dernier commit
 sed -i '$ s/,$//' $JSON_FILE
 
 # Fermer le tableau JSON proprement
