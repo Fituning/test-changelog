@@ -20,3 +20,7 @@
 - Added(index): added new section (3b72d8a)
 ## Added
 - Added(actions): actions push changelog modif (41b39fb)
+## Removed
+- Removed(index.html): remove last section (bedda75)
+## Changed
+- Changed(changelog.md): added commits (a75527a)
