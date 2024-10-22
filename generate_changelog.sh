@@ -73,9 +73,18 @@ echo "$commits" | while IFS=";" read commit_hash commit_date commit_message; do
         description=$commit_message
     fi
 
-    # Concaténer la description et ajouter le commit au fichier JSON
+     # Incrémenter le compteur pour savoir si nous sommes au dernier commit
     counter=$((counter + 1))
-    echo -n "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$full_description\"}," >> "$JSON_FILE"
+
+    # Ajouter une virgule entre les commits, sauf pour le dernier
+    if [ $counter -lt $commit_count ]; then
+        virgule=","
+    else 
+        virgule=""
+    fi
+    
+    # Ajouter chaque commit au JSON avec la description modifiée
+    echo "{\"commit\": \"$commit_hash\", \"date\": \"$commit_date\", \"tag\": \"$tag\", \"scope\": \"$file_component\", \"description\": \"$description\"}$virgule" >> $JSON_FILE
 done
 
 # Ajouter la fermeture du tableau JSON
