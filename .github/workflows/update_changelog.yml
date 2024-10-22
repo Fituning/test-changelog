@@ -15,6 +15,11 @@ jobs:
         with:
           fetch-depth: 0  # Récupérer tout l'historique des commits
 
+      - name: Install Pandoc for PDF conversion
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
       - name: Run generate_changelog.sh
         run: |
           chmod +x ./generate_changelog.sh
