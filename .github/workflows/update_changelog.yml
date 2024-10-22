@@ -29,5 +29,5 @@ jobs:
         env:
           TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
-          git remote set-url origin https://x-access-token:${TOKEN}@github.com/ton-utilisateur/ton-repository.git
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/Fituning/test-changelog.git
           git push origin main
