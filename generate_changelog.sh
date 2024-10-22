@@ -31,6 +31,8 @@ commits=$(git log --reverse $last_sha..$new_sha --pretty=format:"%H;%cd;%s" --da
 commit_count=$(echo "$commits" | wc -l) # Compter le nombre de commits pour gérer la virgule
 counter=0 # Compteur pour savoir quand nous sommes au dernier commit
 
+
+echo "$counter"
 # Traiter chaque commit pour l'ajouter dans le fichier JSON
 IFS=$'\n' # Pour itérer ligne par ligne avec la boucle for
 for commit in $commits; do
